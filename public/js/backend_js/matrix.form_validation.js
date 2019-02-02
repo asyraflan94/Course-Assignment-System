@@ -1,10 +1,28 @@
 
 $(document).ready(function(){
-	
+
+    $("#new_pswd").click(function(){
+            var current_pswd = $("#current_pswd").val();
+            $.ajax({
+            type:'get',
+            url:'/admin/check-pswd',
+            data:{current_pswd:current_pswd},
+            success:function(resp){
+                if(resp=="false"){
+                    $("#checkPswd").html("<font color='red'>Current Password is incorrect</font>");
+                }else if(resp=="true"){
+                    $("#checkPswd").html("<font color='green'>Current Password is correct</font>");
+                }
+            },error:function(){
+                alert("Error");
+            }
+        })
+    });
+
 	$('input[type=checkbox],input[type=radio],input[type=file]').uniform();
-	
+
 	$('select').select2();
-	
+
 	// Form Validation
     $("#basic_validate").validate({
 		rules:{
@@ -34,7 +52,7 @@ $(document).ready(function(){
 			$(element).parents('.control-group').addClass('success');
 		}
 	});
-	
+
 	$("#number_validate").validate({
 		rules:{
 			min:{
@@ -60,19 +78,24 @@ $(document).ready(function(){
 			$(element).parents('.control-group').addClass('success');
 		}
 	});
-	
+
 	$("#password_validate").validate({
 		rules:{
-			pwd:{
+			current_pswd:{
 				required: true,
-				minlength:6,
-				maxlength:20
+				// minlength:6,
+				// maxlength:20
 			},
-			pwd2:{
+			new_pswd:{
 				required:true,
 				minlength:6,
 				maxlength:20,
-				equalTo:"#pwd"
+            },
+            comfirm_pswd:{
+				required:true,
+				minlength:6,
+				maxlength:20,
+				equalTo:"#new_pswd"
 			}
 		},
 		errorClass: "help-inline",

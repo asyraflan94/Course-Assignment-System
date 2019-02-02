@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
+use Session;
+use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -21,5 +24,26 @@ class AdminController extends Controller
 
     public function dashboard(){
         return view('admin.dashboard');
+    }
+
+    public function logout(){
+        Session::flush();
+        return redirect('/admin')->with('flash_message_success','Logged out Successfully');
+    }
+
+    public function setting(){
+        return view('admin.setting');
+    }
+
+    public function checkPassword(Request $request){
+        $data = $request->all(); 
+        $current_password = $data['current_pswd'];
+        $check_password = User::where(['admin'=>'1'])->first();
+        if(Hash::check($current_password,$check_password->password)){
+            echo "true";die;
+        }else{
+            echo "false";die;
+        }
+
     }
 }
