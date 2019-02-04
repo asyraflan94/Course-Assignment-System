@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
 
-    $("#new_pswd").click(function(){
+    $("#current_pswd").keyup(function(){
             var current_pswd = $("#current_pswd").val();
             $.ajax({
             type:'get',
