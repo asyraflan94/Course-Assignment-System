@@ -1,35 +1,35 @@
 
 $(document).ready(function(){
-
+	
 	var msg_template = '<p><span class="msg-block"><strong></strong><span class="time"></span><span class="msg"></span></span></p>';
-
+	
 	$('.chat-message button').click(function(){
-		var input = $(this).siblings('span').children('input[type=text]');
+		var input = $(this).siblings('span').children('input[type=text]');		
 		if(input.val() != ''){
 			add_message('You','img/demo/av1.jpg',input.val(),true);
-		}
+		}		
 	});
-
+	
 	$('.chat-message input').keypress(function(e){
-		if(e.which == 13) {
+		if(e.which == 13) {	
 			if($(this).val() != ''){
 				add_message('You','img/demo/av1.jpg',$(this).val(),true);
-			}
+			}		
 		}
 	});
-
+	
 	setTimeout(function(){
-			add_message('Linda','/images/backend_images/demo/av2.jpg','Hello Every one do u want to freindship with me?')
+			add_message('Linda','img/demo/av2.jpg','Hello Every one do u want to freindship with me?')
 		},'1000');
 	setTimeout(function(){
-			add_message('Mark','/images/backend_images/demo/av3.jpg','Yuppi! why not sirji!!.')
+			add_message('Mark','img/demo/av3.jpg','Yuppi! why not sirji!!.')
 		},'4000');
 	setTimeout(function(){
-			add_message('Linda','/images/backend_images/demo/av2.jpg','Thanks!!! See you soon than')
+			add_message('Linda','img/demo/av2.jpg','Thanks!!! See you soon than')
 		},'8000');
 	setTimeout(function(){
-			add_message('Mark','/images/backend_images/demo/av3.jpg','ok Bye than!!!.')
-		},'12000');
+			add_message('Mark','img/demo/av3.jpg','ok Bye than!!!.')
+		},'12000');	
 	setTimeout(function(){
             remove_user('Linda','Linda')
         },'16000');
