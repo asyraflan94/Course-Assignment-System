@@ -25,9 +25,8 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/admin/check-pswd','AdminController@checkPassword');
     Route::match(['get','post'],'/admin/update-pswd','AdminController@updatePassword');
     Route::get('/admin/scsj','ScsjController@showStudent');
-    Route::get('/admin/scsr','ScsrController@showStudent');
-    Route::get('/admin/scsv','ScsvController@showStudent');
-
+    Route::get('/admin/list_of_subject','SubjectController@showSubjectList');
+    Route::get('/admin/showMatrix','SubjectController@showMatrix');
 
 });
 
