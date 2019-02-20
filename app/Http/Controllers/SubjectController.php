@@ -388,11 +388,19 @@ class SubjectController extends Controller
             'kejuruteraan_perisian_masa_nyata',
             'teknologi_web',
             'kejuruteraan_perisian_berorentasikan_ejen',
-                \DB::raw('teknologi_dan_sistem_maklumat+struktur_diskrit+teknik_pengaturcaraan_1+logik_digital+matematik_pengkomputeran+teknik_pengaturcaraan_2+ komunikasi_rangkaian+pengaturcaraan_web+pangkalan_data+struktur_data_dan_algoritma
-                +analisa_dan_rekabentuk_sistem+organisasi_dan_senibina_komputer+interaksi_komputer_manusia+ kebarangkalian_dan_analisa_data_statistik+pengaturcaraan_berorentasikan_objek
-                +kejuruteraan_perisian+sistem_pengoperasian+teori_sains_komputer+ keushawanan_teknologi_maklumat_dan_seminar+projek_1+projek_2+kejuruteraan_keperluan_dan_permodelan_perisian+pengurusan_projek_perisian
-                +kepintaran_buatan+pembangunan_aplikasi+pengaturcaraan_internet+jaminan_kualiti_perisian+sistem_pakar_berasaskan_pengetahuan+rekabentuk_dan_senibina_perisian
-                +kepintaran_komputer+teknik_pengaturcaraan_3+ topik_khas_dalam_kejuruteraan_perisian+ pembinaan_perisian+ kejuruteraan_perisian_masa_nyata+teknologi_web+ kejuruteraan_perisian_berorentasikan_ejen as total_subject_left'))->get();
+            \DB::raw('teknologi_dan_sistem_maklumat+struktur_diskrit+teknik_pengaturcaraan_1+logik_digital+matematik_pengkomputeran+teknik_pengaturcaraan_2+ komunikasi_rangkaian+pengaturcaraan_web+pangkalan_data+struktur_data_dan_algoritma
+            +analisa_dan_rekabentuk_sistem+organisasi_dan_senibina_komputer+interaksi_komputer_manusia+ kebarangkalian_dan_analisa_data_statistik+pengaturcaraan_berorentasikan_objek
+            +kejuruteraan_perisian+sistem_pengoperasian+teori_sains_komputer+ keushawanan_teknologi_maklumat_dan_seminar+projek_1+projek_2+kejuruteraan_keperluan_dan_permodelan_perisian+pengurusan_projek_perisian
+            +kepintaran_buatan+pembangunan_aplikasi+pengaturcaraan_internet+jaminan_kualiti_perisian+sistem_pakar_berasaskan_pengetahuan+rekabentuk_dan_senibina_perisian
+            +kepintaran_komputer+teknik_pengaturcaraan_3+ topik_khas_dalam_kejuruteraan_perisian+ pembinaan_perisian+ kejuruteraan_perisian_masa_nyata+teknologi_web+ kejuruteraan_perisian_berorentasikan_ejen as total_subject_left'))->get();
+            // code to save the total subject left inside the database 
+            \DB::table('matrices')->update([
+            'total_subject_left' => \DB::raw('teknologi_dan_sistem_maklumat+struktur_diskrit+teknik_pengaturcaraan_1+logik_digital+matematik_pengkomputeran+teknik_pengaturcaraan_2+ komunikasi_rangkaian+pengaturcaraan_web+pangkalan_data+struktur_data_dan_algoritma
+            +analisa_dan_rekabentuk_sistem+organisasi_dan_senibina_komputer+interaksi_komputer_manusia+ kebarangkalian_dan_analisa_data_statistik+pengaturcaraan_berorentasikan_objek
+            +kejuruteraan_perisian+sistem_pengoperasian+teori_sains_komputer+ keushawanan_teknologi_maklumat_dan_seminar+projek_1+projek_2+kejuruteraan_keperluan_dan_permodelan_perisian+pengurusan_projek_perisian
+            +kepintaran_buatan+pembangunan_aplikasi+pengaturcaraan_internet+jaminan_kualiti_perisian+sistem_pakar_berasaskan_pengetahuan+rekabentuk_dan_senibina_perisian
+            +kepintaran_komputer+teknik_pengaturcaraan_3+ topik_khas_dalam_kejuruteraan_perisian+ pembinaan_perisian+ kejuruteraan_perisian_masa_nyata+teknologi_web+ kejuruteraan_perisian_berorentasikan_ejen')
+        ]);
 
         return view('admin.subject_matrix')->with(compact('vars'));
     }
