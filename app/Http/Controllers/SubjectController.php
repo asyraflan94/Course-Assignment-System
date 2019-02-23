@@ -10,8 +10,46 @@ class SubjectController extends Controller
 {
     public function showSubjectList(){
         
+        $t1 = DB::table('matrices')->sum('teknologi_dan_sistem_maklumat');
+        $t2  = DB::table('matrices')->sum('struktur_diskrit');
+        $t3  = DB::table('matrices')->sum('teknik_pengaturcaraan_1');
+        $t4  = DB::table('matrices')->sum('logik_digital');
+        $t5  = DB::table('matrices')->sum('matematik_pengkomputeran');
+        $t6  = DB::table('matrices')->sum('teknik_pengaturcaraan_2');
+        $t7  = DB::table('matrices')->sum('komunikasi_rangkaian');
+        $t8  = DB::table('matrices')->sum('pengaturcaraan_web');
+        $t9  = DB::table('matrices')->sum('pangkalan_data');
+        $t10  = DB::table('matrices')->sum('struktur_data_dan_algoritma');
+        $t11  = DB::table('matrices')->sum('analisa_dan_rekabentuk_sistem');
+        $t12  = DB::table('matrices')->sum('organisasi_dan_senibina_komputer');
+        $t13  = DB::table('matrices')->sum('interaksi_komputer_manusia');
+        $t14  = DB::table('matrices')->sum('kebarangkalian_dan_analisa_data_statistik');
+        $t15  = DB::table('matrices')->sum('pengaturcaraan_berorentasikan_objek');
+        $t16  = DB::table('matrices')->sum('kejuruteraan_perisian');
+        $t17  = DB::table('matrices')->sum('sistem_pengoperasian');
+        $t18  = DB::table('matrices')->sum('teori_sains_komputer');
+        $t19  = DB::table('matrices')->sum('keushawanan_teknologi_maklumat_dan_seminar');
+        $t20  = DB::table('matrices')->sum('projek_1');
+        $t21  = DB::table('matrices')->sum('projek_2');
+        $t22  = DB::table('matrices')->sum('kejuruteraan_keperluan_dan_permodelan_perisian');
+        $t23  = DB::table('matrices')->sum('pengurusan_projek_perisian');
+        $t24  = DB::table('matrices')->sum('kepintaran_buatan');
+        $t25  = DB::table('matrices')->sum('pembangunan_aplikasi');
+        $t26  = DB::table('matrices')->sum('pengaturcaraan_internet');
+        $t27  = DB::table('matrices')->sum('jaminan_kualiti_perisian');
+        $t28  = DB::table('matrices')->sum('sistem_pakar_berasaskan_pengetahuan');
+        $t29  = DB::table('matrices')->sum('rekabentuk_dan_senibina_perisian');
+        $t30  = DB::table('matrices')->sum('kepintaran_komputer');
+        $t31  = DB::table('matrices')->sum('teknik_pengaturcaraan_3');
+        $t32  = DB::table('matrices')->sum('topik_khas_dalam_kejuruteraan_perisian');
+        $t33  = DB::table('matrices')->sum('pembinaan_perisian');
+        $t34  = DB::table('matrices')->sum('kejuruteraan_perisian_masa_nyata');
+        $t35  = DB::table('matrices')->sum('teknologi_web');
+        $t36  = DB::table('matrices')->sum('kejuruteraan_perisian_berorentasikan_ejen');
 
-     
+        return view ('admin.subject_list')->with(compact('t1','t2','t3','t4','t5','t6','t7','t8','t9','t10','t11','t12','t13','t14','t15','t16','t17','t18','t19','t20','t21',
+                                                        't22','t23','t24','t25','t26','t27','t28','t29','t30','t31','t32','t33','t34','t35','t36'));
+    
     }
 
     public function showMatrix(){
