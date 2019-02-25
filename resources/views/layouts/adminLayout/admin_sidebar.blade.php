@@ -10,7 +10,7 @@
             <li><a href="{{url('/admin/scsv')}}">Computer Graphic (SCSV)</a></li> -->
         </ul>
       </li>
-      <li class="{{ Request::is('admin/list_of_subject') ? 'active' : '' }}"><a href="{{url('/admin/list_of_subject')}}"><i class="icon icon-home"></i> <span>List of subjects</span></a> </li>
+      <li class="{{ Request::is('admin/list_of_subject') ? 'active' : '' }}"><a href="{{url('/admin/list_of_subject')}}"><i class="icon icon-list-ol"></i> <span>List of subjects</span></a> </li>
     </ul>
   </div>
   <!--sidebar-menu-->
