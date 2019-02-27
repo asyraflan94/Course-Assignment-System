@@ -3,7 +3,7 @@
 
     <div id="content">
         <div id="content-header">
-        <div id="breadcrumb"> <a href="{{url('/admin/dashboard')}}" title="Go to Dashboard" class="tip-bottom"><i class="icon-home"></i> Dashboard</a><a href="" class="current">List of subjects</a> </div>
+        <div id="breadcrumb"> <a href="{{url('/admin/dashboard')}}" title="Go to Dashboard" class="tip-bottom"><i class="icon-home"></i> Dashboard</a><a href="" class="current">Final Year Subject List</a> </div>
             <h1>Subjects List</h1>
         </div>
         <div class="container-fluid"><hr>

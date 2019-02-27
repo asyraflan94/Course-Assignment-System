@@ -39,6 +39,7 @@
                                 <th>KEUSAHAWANAN TEKNOLOGI MAKLUMAT & SEMINAR</th>
                                 <th>PROJEK 1</th>
                                 <th>PROJEK 2</th>
+                                <th>PENGATURCARAAN PANGKALAN DATA</th>
                                 <th>KEJURUTERAAN KEPERLUAN DAN PERMODELAN PERISIAN</th>
                                 <th>PENGURUSAN PROJEK PERISIAN</th>
                                 <th>KEPINTARAN BUATAN</th>
@@ -82,6 +83,7 @@
                                 <td>{{$student->keushawanan_teknologi_maklumat_dan_seminar}}</td>
                                 <td>{{$student->projek_1}}</td>
                                 <td>{{$student->projek_2}}</td>
+                                <td>{{$student->pengaturcaraan_pangkalan_data}}</td>
                                 <td>{{$student->kejuruteraan_keperluan_dan_permodelan_perisian}}</td>
                                 <td>{{$student->pengurusan_projek_perisian}}</td>
                                 <td>{{$student->kepintaran_buatan}}</td>

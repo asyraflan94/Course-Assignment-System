@@ -54,6 +54,7 @@
                                 <th>S34</th>
                                 <th>S35</th>
                                 <th>S36</th>
+                                <th>S37</th>
 
                             </tr>
                         </thead>
@@ -83,6 +84,7 @@
                                 <td>{{$var->keushawanan_teknologi_maklumat_dan_seminar}}</td>
                                 <td>{{$var->projek_1}}</td>
                                 <td>{{$var->projek_2}}</td>
+                                <td>{{$var->pengaturcaraan_pangkalan_data}}</td>
                                 <td>{{$var->kejuruteraan_keperluan_dan_permodelan_perisian}}</td>
                                 <td>{{$var->pengurusan_projek_perisian}}</td>
                                 <td>{{$var->kepintaran_buatan}}</td>
