@@ -62,43 +62,43 @@
                             <tr class="gradeX">
                                 <td>{{$student->matrix_no}}</td>
                                 <td>{{$student->student_name}}</td>
-                                <td>{{$student->teknologi_dan_sistem_maklumat}}</td>
-                                <td>{{$student->struktur_diskrit}}</td>
-                                <td>{{$student->teknik_pengaturcaraan_1}}</td>
-                                <td>{{$student->logik_digital}}</td>
-                                <td>{{$student->matematik_pengkomputeran}}</td>
-                                <td>{{$student->teknik_pengaturcaraan_2}}</td>
-                                <td>{{$student->komunikasi_rangkaian}}</td>
-                                <td>{{$student->pengaturcaraan_web}}</td>
-                                <td>{{$student->pangkalan_data}}</td>
-                                <td>{{$student->struktur_data_dan_algoritma}}</td>
-                                <td>{{$student->analisa_dan_rekabentuk_sistem}}</td>
-                                <td>{{$student->organisasi_dan_senibina_komputer}}</td>
-                                <td>{{$student->interaksi_komputer_manusia}}</td>
-                                <td>{{$student->kebarangkalian_dan_analisa_data_statistik}}</td>
-                                <td>{{$student->pengaturcaraan_berorentasikan_objek}}</td>
-                                <td>{{$student->kejuruteraan_perisian}}</td>
-                                <td>{{$student->sistem_pengoperasian}}</td>
-                                <td>{{$student->teori_sains_komputer}}</td>
-                                <td>{{$student->keushawanan_teknologi_maklumat_dan_seminar}}</td>
-                                <td>{{$student->projek_1}}</td>
-                                <td>{{$student->projek_2}}</td>
-                                <td>{{$student->pengaturcaraan_pangkalan_data}}</td>
-                                <td>{{$student->kejuruteraan_keperluan_dan_permodelan_perisian}}</td>
-                                <td>{{$student->pengurusan_projek_perisian}}</td>
-                                <td>{{$student->kepintaran_buatan}}</td>
-                                <td>{{$student->pembangunan_aplikasi}}</td>
-                                <td>{{$student->pengaturcaraan_internet}}</td>
-                                <td>{{$student->jaminan_kualiti_perisian}}</td>
-                                <td>{{$student->sistem_pakar_berasaskan_pengetahuan}}</td>
-                                <td>{{$student->rekabentuk_dan_senibina_perisian}}</td>
-                                <td>{{$student->kepintaran_komputer}}</td>
-                                <td>{{$student->teknik_pengaturcaraan_3}}</td>
-                                <td>{{$student->topik_khas_dalam_kejuruteraan_perisian}}</td>
-                                <td>{{$student->pembinaan_perisian}}</td>
-                                <td>{{$student->kejuruteraan_perisian_masa_nyata}}</td>
-                                <td>{{$student->teknologi_web}}</td>
-                                <td>{{$student->kejuruteraan_perisian_berorentasikan_ejen}}</td>
+                                <td style="text-align:center">{{$student->teknologi_dan_sistem_maklumat}}</td>
+                                <td style="text-align:center">{{$student->struktur_diskrit}}</td>
+                                <td style="text-align:center">{{$student->teknik_pengaturcaraan_1}}</td>
+                                <td style="text-align:center">{{$student->logik_digital}}</td>
+                                <td style="text-align:center">{{$student->matematik_pengkomputeran}}</td>
+                                <td style="text-align:center">{{$student->teknik_pengaturcaraan_2}}</td>
+                                <td style="text-align:center">{{$student->komunikasi_rangkaian}}</td>
+                                <td style="text-align:center">{{$student->pengaturcaraan_web}}</td>
+                                <td style="text-align:center">{{$student->pangkalan_data}}</td>
+                                <td style="text-align:center">{{$student->struktur_data_dan_algoritma}}</td>
+                                <td style="text-align:center">{{$student->analisa_dan_rekabentuk_sistem}}</td>
+                                <td style="text-align:center">{{$student->organisasi_dan_senibina_komputer}}</td>
+                                <td style="text-align:center">{{$student->interaksi_komputer_manusia}}</td>
+                                <td style="text-align:center">{{$student->kebarangkalian_dan_analisa_data_statistik}}</td>
+                                <td style="text-align:center">{{$student->pengaturcaraan_berorentasikan_objek}}</td>
+                                <td style="text-align:center">{{$student->kejuruteraan_perisian}}</td>
+                                <td style="text-align:center">{{$student->sistem_pengoperasian}}</td>
+                                <td style="text-align:center">{{$student->teori_sains_komputer}}</td>
+                                <td style="text-align:center">{{$student->keushawanan_teknologi_maklumat_dan_seminar}}</td>
+                                <td style="text-align:center">{{$student->projek_1}}</td>
+                                <td style="text-align:center">{{$student->projek_2}}</td>
+                                <td style="text-align:center">{{$student->pengaturcaraan_pangkalan_data}}</td>
+                                <td style="text-align:center">{{$student->kejuruteraan_keperluan_dan_permodelan_perisian}}</td>
+                                <td style="text-align:center">{{$student->pengurusan_projek_perisian}}</td>
+                                <td style="text-align:center">{{$student->kepintaran_buatan}}</td>
+                                <td style="text-align:center">{{$student->pembangunan_aplikasi}}</td>
+                                <td style="text-align:center">{{$student->pengaturcaraan_internet}}</td>
+                                <td style="text-align:center">{{$student->jaminan_kualiti_perisian}}</td>
+                                <td style="text-align:center">{{$student->sistem_pakar_berasaskan_pengetahuan}}</td>
+                                <td style="text-align:center">{{$student->rekabentuk_dan_senibina_perisian}}</td>
+                                <td style="text-align:center">{{$student->kepintaran_komputer}}</td>
+                                <td style="text-align:center">{{$student->teknik_pengaturcaraan_3}}</td>
+                                <td style="text-align:center">{{$student->topik_khas_dalam_kejuruteraan_perisian}}</td>
+                                <td style="text-align:center">{{$student->pembinaan_perisian}}</td>
+                                <td style="text-align:center">{{$student->kejuruteraan_perisian_masa_nyata}}</td>
+                                <td style="text-align:center">{{$student->teknologi_web}}</td>
+                                <td style="text-align:center">{{$student->kejuruteraan_perisian_berorentasikan_ejen}}</td>
                             </tr>
                             @endforeach
                         </tbody>

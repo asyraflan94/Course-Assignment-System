@@ -5,8 +5,8 @@ $(document).ready(function(){
 		"bJQueryUI": true,
 		"sPaginationType": "full_numbers",
         "sDom": '<""l>t<"F"fp>',
-        "sScrollX": "110%",
-        "sScrollY": "280px",
+        "sScrollX": "100%",
+        "sScrollY": "300px",
         "bScrollCollapse": true
     });
 
