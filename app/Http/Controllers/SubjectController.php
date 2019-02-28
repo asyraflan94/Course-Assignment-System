@@ -424,6 +424,7 @@ class SubjectController extends Controller
 
     public function showSubjectListFinalYear(){
 
+
         $t1  = DB::table('matrices')->where('total_subject_left','<',10)->sum('teknologi_dan_sistem_maklumat');
         $t2  = DB::table('matrices')->where('total_subject_left','<',10)->sum('struktur_diskrit');
         $t3  = DB::table('matrices')->where('total_subject_left','<',10)->sum('teknik_pengaturcaraan_1');
