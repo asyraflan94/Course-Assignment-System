@@ -10,43 +10,44 @@ class SubjectController extends Controller
 {
     public function showSubjectList(){
         
-        $t1 = DB::table('matrices')->sum('teknologi_dan_sistem_maklumat');
-        $t2  = DB::table('matrices')->sum('struktur_diskrit');
-        $t3  = DB::table('matrices')->sum('teknik_pengaturcaraan_1');
-        $t4  = DB::table('matrices')->sum('logik_digital');
-        $t5  = DB::table('matrices')->sum('matematik_pengkomputeran');
-        $t6  = DB::table('matrices')->sum('teknik_pengaturcaraan_2');
-        $t7  = DB::table('matrices')->sum('komunikasi_rangkaian');
-        $t8  = DB::table('matrices')->sum('pengaturcaraan_web');
-        $t9  = DB::table('matrices')->sum('pangkalan_data');
-        $t10  = DB::table('matrices')->sum('struktur_data_dan_algoritma');
-        $t11  = DB::table('matrices')->sum('analisa_dan_rekabentuk_sistem');
-        $t12  = DB::table('matrices')->sum('organisasi_dan_senibina_komputer');
-        $t13  = DB::table('matrices')->sum('interaksi_komputer_manusia');
-        $t14  = DB::table('matrices')->sum('kebarangkalian_dan_analisa_data_statistik');
-        $t15  = DB::table('matrices')->sum('pengaturcaraan_berorentasikan_objek');
-        $t16  = DB::table('matrices')->sum('kejuruteraan_perisian');
-        $t17  = DB::table('matrices')->sum('sistem_pengoperasian');
-        $t18  = DB::table('matrices')->sum('teori_sains_komputer');
-        $t19  = DB::table('matrices')->sum('keushawanan_teknologi_maklumat_dan_seminar');
-        $t20  = DB::table('matrices')->sum('projek_1');
-        $t21  = DB::table('matrices')->sum('projek_2');
-        $t22  = DB::table('matrices')->sum('kejuruteraan_keperluan_dan_permodelan_perisian');
-        $t23  = DB::table('matrices')->sum('pengurusan_projek_perisian');
-        $t24  = DB::table('matrices')->sum('kepintaran_buatan');
-        $t25  = DB::table('matrices')->sum('pembangunan_aplikasi');
-        $t26  = DB::table('matrices')->sum('pengaturcaraan_internet');
-        $t27  = DB::table('matrices')->sum('jaminan_kualiti_perisian');
-        $t28  = DB::table('matrices')->sum('sistem_pakar_berasaskan_pengetahuan');
-        $t29  = DB::table('matrices')->sum('rekabentuk_dan_senibina_perisian');
-        $t30  = DB::table('matrices')->sum('kepintaran_komputer');
-        $t31  = DB::table('matrices')->sum('teknik_pengaturcaraan_3');
-        $t32  = DB::table('matrices')->sum('topik_khas_dalam_kejuruteraan_perisian');
-        $t33  = DB::table('matrices')->sum('pembinaan_perisian');
-        $t34  = DB::table('matrices')->sum('kejuruteraan_perisian_masa_nyata');
-        $t35  = DB::table('matrices')->sum('teknologi_web');
-        $t36  = DB::table('matrices')->sum('kejuruteraan_perisian_berorentasikan_ejen');
-        $t37  = DB::table('matrices')->sum('pengaturcaraan_pangkalan_data');
+        $t1 = DB::table('matrices')->sum('S1');
+        $t2  = DB::table('matrices')->sum('S2');
+        $t3  = DB::table('matrices')->sum('S3');
+        $t4  = DB::table('matrices')->sum('S4');
+        $t5  = DB::table('matrices')->sum('S5');
+        $t6  = DB::table('matrices')->sum('S6');
+        $t7  = DB::table('matrices')->sum('S7');
+        $t8  = DB::table('matrices')->sum('S8');
+        $t9  = DB::table('matrices')->sum('S9');
+        $t10  = DB::table('matrices')->sum('S10');
+        $t11  = DB::table('matrices')->sum('S11');
+        $t12  = DB::table('matrices')->sum('S12');
+        $t13  = DB::table('matrices')->sum('S13');
+        $t14  = DB::table('matrices')->sum('S14');
+        $t15  = DB::table('matrices')->sum('S15');
+        $t16  = DB::table('matrices')->sum('S16');
+        $t17  = DB::table('matrices')->sum('S17');
+        $t18  = DB::table('matrices')->sum('S18');
+        $t19  = DB::table('matrices')->sum('S19');
+        $t20  = DB::table('matrices')->sum('S20');
+        $t21  = DB::table('matrices')->sum('S21');
+        $t37  = DB::table('matrices')->sum('S22_E1');
+        $t22  = DB::table('matrices')->sum('S23_E1');
+        $t23  = DB::table('matrices')->sum('S24_E1');
+        $t24  = DB::table('matrices')->sum('S25_E2');
+        $t25  = DB::table('matrices')->sum('S26_E2');
+        $t26  = DB::table('matrices')->sum('S27_E2');
+        $t27  = DB::table('matrices')->sum('S28_E2');
+        $t28  = DB::table('matrices')->sum('S29_E2');
+        $t29  = DB::table('matrices')->sum('S30_E3');
+        $t30  = DB::table('matrices')->sum('S31_E3');
+        $t31  = DB::table('matrices')->sum('S32_E3');
+        $t32  = DB::table('matrices')->sum('S33_E3');
+        $t33  = DB::table('matrices')->sum('S34_E4');
+        $t34  = DB::table('matrices')->sum('S35_E4');
+        $t35  = DB::table('matrices')->sum('S36_E4');
+        $t36  = DB::table('matrices')->sum('S37_E4');
+        
 
         return view ('admin.subject_list')->with(compact('t1','t2','t3','t4','t5','t6','t7','t8','t9','t10','t11','t12','t13','t14','t15','t16','t17','t18','t19','t20','t21',
                                                         't22','t23','t24','t25','t26','t27','t28','t29','t30','t31','t32','t33','t34','t35','t36','t37'));
@@ -58,224 +59,224 @@ class SubjectController extends Controller
         $vars = Matrix::get();
         foreach($vars as $row){
             //s1
-            if($row->teknologi_dan_sistem_maklumat == 'TC' || $row->teknologi_dan_sistem_maklumat == 'Y' || $row->teknologi_dan_sistem_maklumat == '0'){
+            if($row->S1 == 'TC' || $row->S1 == 'Y' || $row->S1 == '0'){
                 $save = Matrix::find($row->id);
-                $save->teknologi_dan_sistem_maklumat='0';
+                $save->S1='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->teknologi_dan_sistem_maklumat = '1';
+                $save->S1 = '1';
               
             }
             //s2
-            if($row->struktur_diskrit == 'TC' || $row->struktur_diskrit == 'Y' || $row->struktur_diskrit == '0'){
+            if($row->S2 == 'TC' || $row->S2 == 'Y' || $row->S2 == '0'){
                 $save = Matrix::find($row->id);
-                $save->struktur_diskrit='0';
+                $save->S2='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->struktur_diskrit = '1';
+                $save->S2 = '1';
                 
             }
             //s3
-            if($row->teknik_pengaturcaraan_1 == 'TC' || $row->teknik_pengaturcaraan_1 == 'Y' || $row->teknik_pengaturcaraan_1 == '0'){
+            if($row->S3 == 'TC' || $row->S3 == 'Y' || $row->S3 == '0'){
                 $save = Matrix::find($row->id);
-                $save->teknik_pengaturcaraan_1='0';
+                $save->S3='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->teknik_pengaturcaraan_1 = '1';
+                $save->S3 = '1';
                
             }
             //s4
-            if($row->logik_digital == 'TC' || $row->logik_digital == 'Y' || $row->logik_digital == '0'){
+            if($row->S4 == 'TC' || $row->S4 == 'Y' || $row->S4 == '0'){
                 $save = Matrix::find($row->id);
-                $save->logik_digital='0';
+                $save->S4='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->logik_digital = '1';
+                $save->S4 = '1';
                
             }
             //s5
-            if($row->matematik_pengkomputeran == 'TC' || $row->matematik_pengkomputeran == 'Y' || $row->matematik_pengkomputeran == '0'){
+            if($row->S5 == 'TC' || $row->S5 == 'Y' || $row->S5 == '0'){
                 $save = Matrix::find($row->id);
-                $save->matematik_pengkomputeran='0';
+                $save->S5='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->matematik_pengkomputeran = '1';
+                $save->S5 = '1';
                 
             }
             //s6
-            if($row->teknik_pengaturcaraan_2 == 'TC' || $row->teknik_pengaturcaraan_2 == 'Y' || $row->teknik_pengaturcaraan_2 == '0'){
+            if($row->S6 == 'TC' || $row->S6 == 'Y' || $row->S6 == '0'){
                 $save = Matrix::find($row->id);
-                $save->teknik_pengaturcaraan_2='0';
+                $save->S6='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->teknik_pengaturcaraan_2 = '1';
+                $save->S6 = '1';
             }
             //s7
-            if($row->komunikasi_rangkaian == 'TC' || $row->komunikasi_rangkaian == 'Y' || $row->komunikasi_rangkaian == '0'){
+            if($row->S7 == 'TC' || $row->S7 == 'Y' || $row->S7 == '0'){
                 $save = Matrix::find($row->id);
-                $save->komunikasi_rangkaian='0';
+                $save->S7='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->komunikasi_rangkaian = '1';
+                $save->S7 = '1';
             }
             //s7
-            if($row->pengaturcaraan_web == 'TC' || $row->pengaturcaraan_web == 'Y' || $row->pengaturcaraan_web == '0'){
+            if($row->S8 == 'TC' || $row->S8 == 'Y' || $row->S8 == '0'){
                 $save = Matrix::find($row->id);
-                $save->pengaturcaraan_web='0';
+                $save->S8='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->pengaturcaraan_web = '1';
+                $save->S8 = '1';
             }
             //s8
-            if($row->pangkalan_data == 'TC' || $row->pangkalan_data == 'Y' || $row->pangkalan_data == '0'){
+            if($row->S9 == 'TC' || $row->S9 == 'Y' || $row->S9 == '0'){
                 $save = Matrix::find($row->id);
-                $save->pangkalan_data='0';
+                $save->S9='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->pangkalan_data = '1';
+                $save->S9 = '1';
             }
             //s9
-            if($row->struktur_data_dan_algoritma == 'TC' || $row->struktur_data_dan_algoritma == 'Y' || $row->struktur_data_dan_algoritma == '0'){
+            if($row->S10 == 'TC' || $row->S10 == 'Y' || $row->S10 == '0'){
                 $save = Matrix::find($row->id);
-                $save->struktur_data_dan_algoritma='0';
+                $save->S10='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->struktur_data_dan_algoritma = '1';
+                $save->S10 = '1';
             }
             //s10
-            if($row->analisa_dan_rekabentuk_sistem == 'TC' || $row->analisa_dan_rekabentuk_sistem == 'Y' || $row->analisa_dan_rekabentuk_sistem == '0'){
+            if($row->S11 == 'TC' || $row->S11 == 'Y' || $row->S11 == '0'){
                 $save = Matrix::find($row->id);
-                $save->analisa_dan_rekabentuk_sistem='0';
+                $save->S11='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->analisa_dan_rekabentuk_sistem = '1';
+                $save->S11 = '1';
             }
             //s11           
-            if($row->organisasi_dan_senibina_komputer == 'TC' || $row->organisasi_dan_senibina_komputer == 'Y' || $row->organisasi_dan_senibina_komputer == '0'){
+            if($row->S12 == 'TC' || $row->S12 == 'Y' || $row->S12 == '0'){
                 $save = Matrix::find($row->id);
-                $save->organisasi_dan_senibina_komputer='0';
+                $save->S12='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->organisasi_dan_senibina_komputer = '1';
+                $save->S12 = '1';
             }
             //s12
-            if($row->interaksi_komputer_manusia == 'TC' || $row->interaksi_komputer_manusia == 'Y' || $row->interaksi_komputer_manusia == '0'){
+            if($row->S13 == 'TC' || $row->S13 == 'Y' || $row->S13 == '0'){
                 $save = Matrix::find($row->id);
-                $save->interaksi_komputer_manusia='0';
+                $save->S13='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->interaksi_komputer_manusia = '1';
+                $save->S13 = '1';
             }
             //s13
-            if($row->kebarangkalian_dan_analisa_data_statistik == 'TC' || $row->kebarangkalian_dan_analisa_data_statistik == 'Y' || $row->kebarangkalian_dan_analisa_data_statistik == '0'){
+            if($row->S14 == 'TC' || $row->S14 == 'Y' || $row->S14 == '0'){
                 $save = Matrix::find($row->id);
-                $save->kebarangkalian_dan_analisa_data_statistik='0';
+                $save->S14='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->kebarangkalian_dan_analisa_data_statistik = '1';
+                $save->S14 = '1';
             }
             //s14
-            if($row->pengaturcaraan_berorentasikan_objek == 'TC' || $row->pengaturcaraan_berorentasikan_objek == 'Y' || $row->pengaturcaraan_berorentasikan_objek == '0'){
+            if($row->S15 == 'TC' || $row->S15 == 'Y' || $row->S15 == '0'){
                 $save = Matrix::find($row->id);
-                $save->pengaturcaraan_berorentasikan_objek='0';
+                $save->S15='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->pengaturcaraan_berorentasikan_objek = '1';
+                $save->S15 = '1';
             }
             //s15
-            if($row->kejuruteraan_perisian == 'TC' || $row->kejuruteraan_perisian == 'Y' || $row->kejuruteraan_perisian == '0'){
+            if($row->S16 == 'TC' || $row->S16 == 'Y' || $row->S16 == '0'){
                 $save = Matrix::find($row->id);
-                $save->kejuruteraan_perisian='0';
+                $save->S16='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->kejuruteraan_perisian = '1';
+                $save->S16 = '1';
             }
             //s16
-            if($row->sistem_pengoperasian == 'TC' || $row->sistem_pengoperasian == 'Y' || $row->sistem_pengoperasian == '0'){
+            if($row->S17 == 'TC' || $row->S17 == 'Y' || $row->S17 == '0'){
                 $save = Matrix::find($row->id);
-                $save->sistem_pengoperasian='0';
+                $save->S17='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->sistem_pengoperasian = '1';
+                $save->S17 = '1';
             }
             //s17
-            if($row->teori_sains_komputer == 'TC' || $row->teori_sains_komputer == 'Y' || $row->teori_sains_komputer == '0'){
+            if($row->S18 == 'TC' || $row->S18 == 'Y' || $row->S18 == '0'){
                 $save = Matrix::find($row->id);
-                $save->teori_sains_komputer='0';
+                $save->S18='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->teori_sains_komputer = '1';
+                $save->S18 = '1';
             }
             //s18
-            if($row->keushawanan_teknologi_maklumat_dan_seminar == 'TC' || $row->keushawanan_teknologi_maklumat_dan_seminar == 'Y' || $row->keushawanan_teknologi_maklumat_dan_seminar == '0'){
+            if($row->S19 == 'TC' || $row->S19 == 'Y' || $row->S19 == '0'){
                 $save = Matrix::find($row->id);
-                $save->keushawanan_teknologi_maklumat_dan_seminar='0';
+                $save->S19='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->keushawanan_teknologi_maklumat_dan_seminar = '1';
+                $save->S19 = '1';
             }
             //s19
-            if($row->projek_1 == 'TC' || $row->projek_1 == 'Y' || $row->projek_1 == '0'){
+            if($row->S20 == 'TC' || $row->S20 == 'Y' || $row->S20 == '0'){
                 $save = Matrix::find($row->id);
-                $save->projek_1='0';
+                $save->S20='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->projek_1 = '1';
+                $save->S20 = '1';
             }
             //s20
-            if($row->projek_2 == 'TC' || $row->projek_2 == 'Y' || $row->projek_2 == '0'){
+            if($row->S21 == 'TC' || $row->S21 == 'Y' || $row->S21 == '0'){
                 $save = Matrix::find($row->id);
-                $save->projek_2='0';
+                $save->S21='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->projek_2 = '1';
+                $save->S21 = '1';
             }
             //s21
-            if($row->pengaturcaraan_pangkalan_data == 'TC' || $row->pengaturcaraan_pangkalan_data == 'Y' || $row->pengaturcaraan_pangkalan_data == '0'){
+            if($row->S22_E1 == 'TC' || $row->S22_E1 == 'Y' || $row->S22_E1 == '0'){
                 $save = Matrix::find($row->id);
-                $save->pengaturcaraan_pangkalan_data='0';
+                $save->S22_E1='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->pengaturcaraan_pangkalan_data = '1';
+                $save->S22_E1 = '1';
             }
-            if($row->kejuruteraan_keperluan_dan_permodelan_perisian == 'TC' || $row->kejuruteraan_keperluan_dan_permodelan_perisian == 'Y' || $row->kejuruteraan_keperluan_dan_permodelan_perisian == '0'){
+            if($row->S23_E1 == 'TC' || $row->S23_E1 == 'Y' || $row->S23_E1 == '0'){
                 $save = Matrix::find($row->id);
-                $save->kejuruteraan_keperluan_dan_permodelan_perisian='0';
+                $save->S23_E1='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->kejuruteraan_keperluan_dan_permodelan_perisian = '1';
+                $save->S23_E1 = '1';
             }
             //s22
-            if($row->pengurusan_projek_perisian == 'TC' || $row->pengurusan_projek_perisian == 'Y' || $row->pengurusan_projek_perisian == '0'){
+            if($row->S24_E1 == 'TC' || $row->S24_E1 == 'Y' || $row->S24_E1 == '0'){
                 $save = Matrix::find($row->id);
-                $save->pengurusan_projek_perisian='0';
+                $save->S24_E1='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->pengurusan_projek_perisian = '1';
+                $save->S24_E1 = '1';
             }
             if($row->kejuruteraan_keperluan == 'TC' || $row->kejuruteraan_keperluan == 'Y' || $row->kejuruteraan_keperluan == '0'){
                 $save = Matrix::find($row->id);
@@ -283,134 +284,134 @@ class SubjectController extends Controller
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->kepintaran_buatan = '1';
+                $save->S25_E2 = '1';
             }
             //s23
-            if($row->kepintaran_buatan == 'TC' || $row->kepintaran_buatan == 'Y' || $row->kepintaran_buatan == '0'){
+            if($row->S25_E2 == 'TC' || $row->S25_E2 == 'Y' || $row->S25_E2 == '0'){
                 $save = Matrix::find($row->id);
-                $save->kepintaran_buatan='0';
+                $save->S25_E2='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->kepintaran_buatan = '1';
+                $save->S25_E2 = '1';
             }
             //s24
-            if($row->pembangunan_aplikasi == 'TC' || $row->pembangunan_aplikasi == 'Y' || $row->pembangunan_aplikasi == '0'){
+            if($row->S26_E2 == 'TC' || $row->S26_E2 == 'Y' || $row->S26_E2 == '0'){
                 $save = Matrix::find($row->id);
-                $save->pembangunan_aplikasi='0';
+                $save->S26_E2='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->pembangunan_aplikasi = '1';
+                $save->S26_E2 = '1';
             }
             //s25
-            if($row->pengaturcaraan_internet == 'TC' || $row->pengaturcaraan_internet == 'Y' || $row->pengaturcaraan_internet == '0'){
+            if($row->S27_E2 == 'TC' || $row->S27_E2 == 'Y' || $row->S27_E2 == '0'){
                 $save = Matrix::find($row->id);
-                $save->pengaturcaraan_internet='0';
+                $save->S27_E2='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->pengaturcaraan_internet = '1';
+                $save->S27_E2 = '1';
             }
             //s26
-            if($row->jaminan_kualiti_perisian == 'TC' || $row->jaminan_kualiti_perisian == 'Y' || $row->jaminan_kualiti_perisian == '0'){
+            if($row->S28_E2 == 'TC' || $row->S28_E2 == 'Y' || $row->S28_E2 == '0'){
                 $save = Matrix::find($row->id);
-                $save->jaminan_kualiti_perisian='0';
+                $save->S28_E2='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->jaminan_kualiti_perisian = '1';
+                $save->S28_E2 = '1';
             }
             //s27
-            if($row->sistem_pakar_berasaskan_pengetahuan == 'TC' || $row->sistem_pakar_berasaskan_pengetahuan == 'Y' || $row->sistem_pakar_berasaskan_pengetahuan == '0'){
+            if($row->S29_E2 == 'TC' || $row->S29_E2 == 'Y' || $row->S29_E2 == '0'){
                 $save = Matrix::find($row->id);
-                $save->sistem_pakar_berasaskan_pengetahuan='0';
+                $save->S29_E2='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->sistem_pakar_berasaskan_pengetahuan = '1';
+                $save->S29_E2 = '1';
             }
             //s28
-            if($row->rekabentuk_dan_senibina_perisian == 'TC' || $row->rekabentuk_dan_senibina_perisian == 'Y' || $row->rekabentuk_dan_senibina_perisian == '0'){
+            if($row->S30_E3 == 'TC' || $row->S30_E3 == 'Y' || $row->S30_E3 == '0'){
                 $save = Matrix::find($row->id);
-                $save->rekabentuk_dan_senibina_perisian='0';
+                $save->S30_E3='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->rekabentuk_dan_senibina_perisian = '1';
+                $save->S30_E3 = '1';
             }
             
-            if($row->kepintaran_komputer == 'TC' || $row->kepintaran_komputer == 'Y' || $row->kepintaran_komputer == '0'){
+            if($row->S31_E3 == 'TC' || $row->S31_E3 == 'Y' || $row->S31_E3 == '0'){
                 $save = Matrix::find($row->id);
-                $save->kepintaran_komputer='0';
+                $save->S31_E3='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->kepintaran_komputer = '1';
+                $save->S31_E3 = '1';
             }
             
-            if($row->teknik_pengaturcaraan_3 == 'TC' || $row->teknik_pengaturcaraan_3 == 'Y' || $row->teknik_pengaturcaraan_3 == '0'){
+            if($row->S32_E3 == 'TC' || $row->S32_E3 == 'Y' || $row->S32_E3 == '0'){
                 $save = Matrix::find($row->id);
-                $save->teknik_pengaturcaraan_3='0';
+                $save->S32_E3='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->teknik_pengaturcaraan_3 = '1';
+                $save->S32_E3 = '1';
             }
             
-            if($row->topik_khas_dalam_kejuruteraan_perisian == 'TC' || $row->topik_khas_dalam_kejuruteraan_perisian == 'Y' || $row->topik_khas_dalam_kejuruteraan_perisian == '0'){
+            if($row->S33_E3 == 'TC' || $row->S33_E3 == 'Y' || $row->S33_E3 == '0'){
                 $save = Matrix::find($row->id);
-                $save->topik_khas_dalam_kejuruteraan_perisian='0';
+                $save->S33_E3='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->topik_khas_dalam_kejuruteraan_perisian = '1';
+                $save->S33_E3 = '1';
             }
             
-            if($row->pembinaan_perisian == 'TC' || $row->pembinaan_perisian == 'Y' || $row->pembinaan_perisian == '0'){
+            if($row->S34_E4 == 'TC' || $row->S34_E4 == 'Y' || $row->S34_E4 == '0'){
                 $save = Matrix::find($row->id);
-                $save->pembinaan_perisian='0';
+                $save->S34_E4='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->pembinaan_perisian = '1';
+                $save->S34_E4 = '1';
             }
             
-            if($row->kejuruteraan_perisian_masa_nyata == 'TC' || $row->kejuruteraan_perisian_masa_nyata == 'Y' || $row->kejuruteraan_perisian_masa_nyata == '0'){
+            if($row->S35_E4 == 'TC' || $row->S35_E4 == 'Y' || $row->S35_E4 == '0'){
                 $save = Matrix::find($row->id);
-                $save->kejuruteraan_perisian_masa_nyata='0';
+                $save->S35_E4='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->kejuruteraan_perisian_masa_nyata = '1';
+                $save->S35_E4 = '1';
             }
             
-            if($row->teknologi_web == 'TC' || $row->teknologi_web == 'Y' || $row->teknologi_web == '0'){
+            if($row->S36_E4 == 'TC' || $row->S36_E4 == 'Y' || $row->S36_E4 == '0'){
                 $save = Matrix::find($row->id);
-                $save->teknologi_web='0';
+                $save->S36_E4='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->teknologi_web = '1';
+                $save->S36_E4 = '1';
             }
             
-            if($row->kejuruteraan_perisian_berorentasikan_ejen == 'TC' || $row->kejuruteraan_perisian_berorentasikan_ejen == 'Y' || $row->kejuruteraan_perisian_berorentasikan_ejen == '0'){
+            if($row->S37_E4 == 'TC' || $row->S37_E4 == 'Y' || $row->S37_E4 == '0'){
                 $save = Matrix::find($row->id);
-                $save->kejuruteraan_perisian_berorentasikan_ejen='0';
+                $save->S37_E4='0';
                 $save->save();
             } else{
                 $save = Matrix::find($row->id);
-                $save->kejuruteraan_perisian_berorentasikan_ejen = '1';
+                $save->S37_E4 = '1';
             }
 
         }
         //     // code to save the total subject left inside the database 
             \DB::table('matrices')->update([
-            'total_subject_left' => \DB::raw('teknologi_dan_sistem_maklumat+struktur_diskrit+teknik_pengaturcaraan_1+logik_digital+matematik_pengkomputeran+teknik_pengaturcaraan_2+ komunikasi_rangkaian+pengaturcaraan_web+pangkalan_data+struktur_data_dan_algoritma
-            +analisa_dan_rekabentuk_sistem+organisasi_dan_senibina_komputer+interaksi_komputer_manusia+ kebarangkalian_dan_analisa_data_statistik+pengaturcaraan_berorentasikan_objek
-            +kejuruteraan_perisian+sistem_pengoperasian+teori_sains_komputer+ keushawanan_teknologi_maklumat_dan_seminar+projek_1+projek_2+pengaturcaraan_pangkalan_data+kejuruteraan_keperluan_dan_permodelan_perisian+pengurusan_projek_perisian
-            +kepintaran_buatan+pembangunan_aplikasi+pengaturcaraan_internet+jaminan_kualiti_perisian+sistem_pakar_berasaskan_pengetahuan+rekabentuk_dan_senibina_perisian
-            +kepintaran_komputer+teknik_pengaturcaraan_3+ topik_khas_dalam_kejuruteraan_perisian+ pembinaan_perisian+ kejuruteraan_perisian_masa_nyata+teknologi_web+ kejuruteraan_perisian_berorentasikan_ejen')
+            'total_subject_left' => \DB::raw('S1+S2+S3+S4+S5+S6+ S7+S8+S9+S10
+            +S11+S12+S13+ S14+S15
+            +S16+S17+S18+ S19+S20+S21+S22_E1+S23_E1+S24_E1
+            +S25_E2+S26_E2+S27_E2+S28_E2+S29_E2+S30_E3
+            +S31_E3+S32_E3+ S33_E3+ S34_E4+ S35_E4+S36_E4+ S37_E4')
         ]);
 
         return view('admin.subject_matrix')->with(compact('vars'));
@@ -425,43 +426,43 @@ class SubjectController extends Controller
     public function showSubjectListFinalYear(){
 
 
-        $t1  = DB::table('matrices')->where('total_subject_left','<',10)->sum('teknologi_dan_sistem_maklumat');
-        $t2  = DB::table('matrices')->where('total_subject_left','<',10)->sum('struktur_diskrit');
-        $t3  = DB::table('matrices')->where('total_subject_left','<',10)->sum('teknik_pengaturcaraan_1');
-        $t4  = DB::table('matrices')->where('total_subject_left','<',10)->sum('logik_digital');
-        $t5  = DB::table('matrices')->where('total_subject_left','<',10)->sum('matematik_pengkomputeran');
-        $t6  = DB::table('matrices')->where('total_subject_left','<',10)->sum('teknik_pengaturcaraan_2');
-        $t7  = DB::table('matrices')->where('total_subject_left','<',10)->sum('komunikasi_rangkaian');
-        $t8  = DB::table('matrices')->where('total_subject_left','<',10)->sum('pengaturcaraan_web');
-        $t9  = DB::table('matrices')->where('total_subject_left','<',10)->sum('pangkalan_data');
-        $t10  = DB::table('matrices')->where('total_subject_left','<',10)->sum('struktur_data_dan_algoritma');
-        $t11  = DB::table('matrices')->where('total_subject_left','<',10)->sum('analisa_dan_rekabentuk_sistem');
-        $t12  = DB::table('matrices')->where('total_subject_left','<',10)->sum('organisasi_dan_senibina_komputer');
-        $t13  = DB::table('matrices')->where('total_subject_left','<',10)->sum('interaksi_komputer_manusia');
-        $t14  = DB::table('matrices')->where('total_subject_left','<',10)->sum('kebarangkalian_dan_analisa_data_statistik');
-        $t15  = DB::table('matrices')->where('total_subject_left','<',10)->sum('pengaturcaraan_berorentasikan_objek');
-        $t16  = DB::table('matrices')->where('total_subject_left','<',10)->sum('kejuruteraan_perisian');
-        $t17  = DB::table('matrices')->where('total_subject_left','<',10)->sum('sistem_pengoperasian');
-        $t18  = DB::table('matrices')->where('total_subject_left','<',10)->sum('teori_sains_komputer');
-        $t19  = DB::table('matrices')->where('total_subject_left','<',10)->sum('keushawanan_teknologi_maklumat_dan_seminar');
-        $t20  = DB::table('matrices')->where('total_subject_left','<',10)->sum('projek_1');
-        $t21  = DB::table('matrices')->where('total_subject_left','<',10)->sum('projek_2');
-        $t22  = DB::table('matrices')->where('total_subject_left','<',10)->sum('kejuruteraan_keperluan_dan_permodelan_perisian');
-        $t23  = DB::table('matrices')->where('total_subject_left','<',10)->sum('pengurusan_projek_perisian');
-        $t24  = DB::table('matrices')->where('total_subject_left','<',10)->sum('kepintaran_buatan');
-        $t25  = DB::table('matrices')->where('total_subject_left','<',10)->sum('pembangunan_aplikasi');
-        $t26  = DB::table('matrices')->where('total_subject_left','<',10)->sum('pengaturcaraan_internet');
-        $t27  = DB::table('matrices')->where('total_subject_left','<',10)->sum('jaminan_kualiti_perisian');
-        $t28  = DB::table('matrices')->where('total_subject_left','<',10)->sum('sistem_pakar_berasaskan_pengetahuan');
-        $t29  = DB::table('matrices')->where('total_subject_left','<',10)->sum('rekabentuk_dan_senibina_perisian');
-        $t30  = DB::table('matrices')->where('total_subject_left','<',10)->sum('kepintaran_komputer');
-        $t31  = DB::table('matrices')->where('total_subject_left','<',10)->sum('teknik_pengaturcaraan_3');
-        $t32  = DB::table('matrices')->where('total_subject_left','<',10)->sum('topik_khas_dalam_kejuruteraan_perisian');
-        $t33  = DB::table('matrices')->where('total_subject_left','<',10)->sum('pembinaan_perisian');
-        $t34  = DB::table('matrices')->where('total_subject_left','<',10)->sum('kejuruteraan_perisian_masa_nyata');
-        $t35  = DB::table('matrices')->where('total_subject_left','<',10)->sum('teknologi_web');
-        $t36  = DB::table('matrices')->where('total_subject_left','<',10)->sum('kejuruteraan_perisian_berorentasikan_ejen');
-        $t37  = DB::table('matrices')->where('total_subject_left','<',10)->sum('pengaturcaraan_pangkalan_data');
+        $t1  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S1');
+        $t2  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S2');
+        $t3  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S3');
+        $t4  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S4');
+        $t5  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S5');
+        $t6  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S6');
+        $t7  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S7');
+        $t8  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S8');
+        $t9  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S9');
+        $t10  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S10');
+        $t11  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S11');
+        $t12  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S12');
+        $t13  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S13');
+        $t14  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S14');
+        $t15  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S15');
+        $t16  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S16');
+        $t17  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S17');
+        $t18  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S18');
+        $t19  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S19');
+        $t20  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S20');
+        $t21  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S21');
+        $t22  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S23_E1');
+        $t23  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S24_E1');
+        $t24  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S25_E2');
+        $t25  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S26_E2');
+        $t26  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S27_E2');
+        $t27  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S28_E2');
+        $t28  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S29_E2');
+        $t29  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S30_E3');
+        $t30  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S31_E3');
+        $t31  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S32_E3');
+        $t32  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S33_E3');
+        $t33  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S34_E4');
+        $t34  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S35_E4');
+        $t35  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S36_E4');
+        $t36  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S37_E4');
+        $t37  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S22_E1');
 
         return view ('admin.final_year_subject_list')->with(compact('t1','t2','t3','t4','t5','t6','t7','t8','t9','t10','t11','t12','t13','t14','t15','t16','t17','t18','t19','t20','t21',
                                                         't22','t23','t24','t25','t26','t27','t28','t29','t30','t31','t32','t33','t34','t35','t36','t37'));
