@@ -11,6 +11,64 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
+-- Dumping structure for table psm(asyraf_hensem).finalyear_students
+CREATE TABLE IF NOT EXISTS `finalyear_students` (
+  `student_name` varchar(50) DEFAULT NULL,
+  `subject` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table psm(asyraf_hensem).finalyear_students: ~0 rows (approximately)
+/*!40000 ALTER TABLE `finalyear_students` DISABLE KEYS */;
+/*!40000 ALTER TABLE `finalyear_students` ENABLE KEYS */;
+
+-- Dumping structure for table psm(asyraf_hensem).finalyear_subjects
+CREATE TABLE IF NOT EXISTS `finalyear_subjects` (
+  `subject_name` varchar(50) DEFAULT NULL,
+  `student_number` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table psm(asyraf_hensem).finalyear_subjects: ~37 rows (approximately)
+/*!40000 ALTER TABLE `finalyear_subjects` DISABLE KEYS */;
+INSERT INTO `finalyear_subjects` (`subject_name`, `student_number`) VALUES
+	('S1', '0'),
+	('S2', '0'),
+	('S3', '0'),
+	('S4', '0'),
+	('S5', '1'),
+	('S6', '0'),
+	('S7', '1'),
+	('S8', '2'),
+	('S9', '1'),
+	('S10', '0'),
+	('S11', '1'),
+	('S12', '0'),
+	('S13', '2'),
+	('S14', '2'),
+	('S15', '0'),
+	('S16', '0'),
+	('S17', '2'),
+	('S18', '6'),
+	('S19', '2'),
+	('S20', '21'),
+	('S21', '31'),
+	('S23_E1', '9'),
+	('S24_E1', '9'),
+	('S25_E2', '0'),
+	('S26_E2', '1'),
+	('S27_E2', '3'),
+	('S28_E2', '6'),
+	('S29_E2', '0'),
+	('S30_E3', '11'),
+	('S31_E3', '16'),
+	('S32_E3', '13'),
+	('S33_E3', '2'),
+	('S34_E4', '0'),
+	('S35_E4', '10'),
+	('S36_E4', '13'),
+	('S37_E4', '12'),
+	('S22_E1', '0');
+/*!40000 ALTER TABLE `finalyear_subjects` ENABLE KEYS */;
+
 -- Dumping structure for table psm(asyraf_hensem).matrices
 CREATE TABLE IF NOT EXISTS `matrices` (
   `id` int(11) NOT NULL AUTO_INCREMENT,

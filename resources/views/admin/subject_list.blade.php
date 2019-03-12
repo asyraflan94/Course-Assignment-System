@@ -97,14 +97,14 @@
                                 <td>Keushawanan Teknologi Maklumat dan Seminar</td>
                                 <td>{{ $t19 }}</td>
                             </tr>
-                            <tr class="gradeX">
+                            <!-- <tr class="gradeX">
                                 <td>Projek 1</td>
                                 <td>{{ $t20 }}</td>
                             </tr>
                             <tr class="gradeX">
                                 <td>Projek 2</td>
                                 <td>{{ $t21 }}</td>
-                            </tr>
+                            </tr> -->
                             <tr class="gradeX">
                                 <td>Pengaturcaraan Pangkalan Data</td>
                                 <td>{{ $t37 }}</td>
