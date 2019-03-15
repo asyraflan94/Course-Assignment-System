@@ -29,6 +29,7 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/admin/show-matrix','SubjectController@showMatrix');
     Route::get('/admin/final-year-list','SubjectController@showFinalYear');
     Route::get('/admin/final-year-subject-list','SubjectController@showSubjectListFinalYear');
+    Route::get('/admin/elective-course','SubjectController@electiveGroup');
 
 });
 

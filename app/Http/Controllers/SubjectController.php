@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Matrix;
+use App\FinalyearSubject;
 use Illuminate\Support\Facades\DB;
 
 class SubjectController extends Controller
 {
     public function showSubjectList(){
-        
+
         $t1 = DB::table('matrices')->sum('S1');
         $t2  = DB::table('matrices')->sum('S2');
         $t3  = DB::table('matrices')->sum('S3');
@@ -47,15 +48,15 @@ class SubjectController extends Controller
         $t34  = DB::table('matrices')->sum('S35_E4');
         $t35  = DB::table('matrices')->sum('S36_E4');
         $t36  = DB::table('matrices')->sum('S37_E4');
-        
+
 
         return view ('admin.subject_list')->with(compact('t1','t2','t3','t4','t5','t6','t7','t8','t9','t10','t11','t12','t13','t14','t15','t16','t17','t18','t19','t20','t21',
                                                         't22','t23','t24','t25','t26','t27','t28','t29','t30','t31','t32','t33','t34','t35','t36','t37'));
-    
+
     }
 
     public function showMatrix(){
-        
+
         $vars = Matrix::get();
         foreach($vars as $row){
             //s1
@@ -66,7 +67,7 @@ class SubjectController extends Controller
             } else{
                 $save = Matrix::find($row->id);
                 $save->S1 = '1';
-              
+
             }
             //s2
             if($row->S2 == 'TC' || $row->S2 == 'Y' || $row->S2 == '0'){
@@ -76,7 +77,7 @@ class SubjectController extends Controller
             } else{
                 $save = Matrix::find($row->id);
                 $save->S2 = '1';
-                
+
             }
             //s3
             if($row->S3 == 'TC' || $row->S3 == 'Y' || $row->S3 == '0'){
@@ -86,7 +87,7 @@ class SubjectController extends Controller
             } else{
                 $save = Matrix::find($row->id);
                 $save->S3 = '1';
-               
+
             }
             //s4
             if($row->S4 == 'TC' || $row->S4 == 'Y' || $row->S4 == '0'){
@@ -96,7 +97,7 @@ class SubjectController extends Controller
             } else{
                 $save = Matrix::find($row->id);
                 $save->S4 = '1';
-               
+
             }
             //s5
             if($row->S5 == 'TC' || $row->S5 == 'Y' || $row->S5 == '0'){
@@ -106,7 +107,7 @@ class SubjectController extends Controller
             } else{
                 $save = Matrix::find($row->id);
                 $save->S5 = '1';
-                
+
             }
             //s6
             if($row->S6 == 'TC' || $row->S6 == 'Y' || $row->S6 == '0'){
@@ -162,7 +163,7 @@ class SubjectController extends Controller
                 $save = Matrix::find($row->id);
                 $save->S11 = '1';
             }
-            //s11           
+            //s11
             if($row->S12 == 'TC' || $row->S12 == 'Y' || $row->S12 == '0'){
                 $save = Matrix::find($row->id);
                 $save->S12='0';
@@ -340,7 +341,7 @@ class SubjectController extends Controller
                 $save = Matrix::find($row->id);
                 $save->S30_E3 = '1';
             }
-            
+
             if($row->S31_E3 == 'TC' || $row->S31_E3 == 'Y' || $row->S31_E3 == '0'){
                 $save = Matrix::find($row->id);
                 $save->S31_E3='0';
@@ -349,7 +350,7 @@ class SubjectController extends Controller
                 $save = Matrix::find($row->id);
                 $save->S31_E3 = '1';
             }
-            
+
             if($row->S32_E3 == 'TC' || $row->S32_E3 == 'Y' || $row->S32_E3 == '0'){
                 $save = Matrix::find($row->id);
                 $save->S32_E3='0';
@@ -358,7 +359,7 @@ class SubjectController extends Controller
                 $save = Matrix::find($row->id);
                 $save->S32_E3 = '1';
             }
-            
+
             if($row->S33_E3 == 'TC' || $row->S33_E3 == 'Y' || $row->S33_E3 == '0'){
                 $save = Matrix::find($row->id);
                 $save->S33_E3='0';
@@ -367,7 +368,7 @@ class SubjectController extends Controller
                 $save = Matrix::find($row->id);
                 $save->S33_E3 = '1';
             }
-            
+
             if($row->S34_E4 == 'TC' || $row->S34_E4 == 'Y' || $row->S34_E4 == '0'){
                 $save = Matrix::find($row->id);
                 $save->S34_E4='0';
@@ -376,7 +377,7 @@ class SubjectController extends Controller
                 $save = Matrix::find($row->id);
                 $save->S34_E4 = '1';
             }
-            
+
             if($row->S35_E4 == 'TC' || $row->S35_E4 == 'Y' || $row->S35_E4 == '0'){
                 $save = Matrix::find($row->id);
                 $save->S35_E4='0';
@@ -385,7 +386,7 @@ class SubjectController extends Controller
                 $save = Matrix::find($row->id);
                 $save->S35_E4 = '1';
             }
-            
+
             if($row->S36_E4 == 'TC' || $row->S36_E4 == 'Y' || $row->S36_E4 == '0'){
                 $save = Matrix::find($row->id);
                 $save->S36_E4='0';
@@ -394,7 +395,7 @@ class SubjectController extends Controller
                 $save = Matrix::find($row->id);
                 $save->S36_E4 = '1';
             }
-            
+
             if($row->S37_E4 == 'TC' || $row->S37_E4 == 'Y' || $row->S37_E4 == '0'){
                 $save = Matrix::find($row->id);
                 $save->S37_E4='0';
@@ -405,7 +406,7 @@ class SubjectController extends Controller
             }
 
         }
-        //     // code to save the total subject left inside the database 
+        //     // code to save the total subject left inside the database
             \DB::table('matrices')->update([
             'total_subject_left' => \DB::raw('S1+S2+S3+S4+S5+S6+ S7+S8+S9+S10
             +S11+S12+S13+ S14+S15
@@ -428,190 +429,215 @@ class SubjectController extends Controller
         $t1  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S1');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S1'],
-                ['student_number' => $t1]);  
+                ['subject_name' => 'S1','subject_group' => 'c'],
+                ['student_number' => $t1]);
         $t2  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S2');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S2'],
-                ['student_number' => $t2]); 
+                ['subject_name' => 'S2','subject_group' => 'c'],
+                ['student_number' => $t2]);
         $t3  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S3');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S3'],
-                ['student_number' => $t3]); 
+                ['subject_name' => 'S3','subject_group' => 'c'],
+                ['student_number' => $t3]);
         $t4  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S4');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S4'],
-                ['student_number' => $t4]); 
+                ['subject_name' => 'S4','subject_group' => 'c'],
+                ['student_number' => $t4]);
         $t5  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S5');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S5'],
-                ['student_number' => $t5]); 
+                ['subject_name' => 'S5','subject_group' => 'c'],
+                ['student_number' => $t5]);
         $t6  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S6');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S6'],
-                ['student_number' => $t6]); 
+                ['subject_name' => 'S6','subject_group' => 'c'],
+                ['student_number' => $t6]);
         $t7  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S7');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S7'],
-                ['student_number' => $t7]); 
+                ['subject_name' => 'S7','subject_group' => 'c'],
+                ['student_number' => $t7]);
         $t8  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S8');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S8'],
-                ['student_number' => $t8]); 
+                ['subject_name' => 'S8','subject_group' => 'c'],
+                ['student_number' => $t8]);
         $t9  = DB::table('matrices')->where('total_subject_left','<',10)->sum('S9');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S9'],
-                ['student_number' => $t9]); 
+                ['subject_name' => 'S9','subject_group' => 'c'],
+                ['student_number' => $t9]);
         $t10 = DB::table('matrices')->where('total_subject_left','<',10)->sum('S10');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S10'],
-                ['student_number' => $t10]); 
+                ['subject_name' => 'S10','subject_group' => 'c'],
+                ['student_number' => $t10]);
         $t11 = DB::table('matrices')->where('total_subject_left','<',10)->sum('S11');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S11'],
-                ['student_number' => $t11]); 
+                ['subject_name' => 'S11','subject_group' => 'c'],
+                ['student_number' => $t11]);
         $t12 = DB::table('matrices')->where('total_subject_left','<',10)->sum('S12');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S12'],
-                ['student_number' => $t12]); 
+                ['subject_name' => 'S12','subject_group' => 'c'],
+                ['student_number' => $t12]);
         $t13 = DB::table('matrices')->where('total_subject_left','<',10)->sum('S13');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S13'],
-                ['student_number' => $t13]); 
+                ['subject_name' => 'S13','subject_group' => 'c'],
+                ['student_number' => $t13]);
         $t14 = DB::table('matrices')->where('total_subject_left','<',10)->sum('S14');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S14'],
-                ['student_number' => $t14]); 
+                ['subject_name' => 'S14','subject_group' => 'c'],
+                ['student_number' => $t14]);
         $t15 = DB::table('matrices')->where('total_subject_left','<',10)->sum('S15');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S15'],
-                ['student_number' => $t15]); 
+                ['subject_name' => 'S15','subject_group' => 'c'],
+                ['student_number' => $t15]);
         $t16 = DB::table('matrices')->where('total_subject_left','<',10)->sum('S16');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S16'],
-                ['student_number' => $t16]); 
+                ['subject_name' => 'S16','subject_group' => 'c'],
+                ['student_number' => $t16]);
         $t17 = DB::table('matrices')->where('total_subject_left','<',10)->sum('S17');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S17'],
-                ['student_number' => $t17]); 
+                ['subject_name' => 'S17','subject_group' => 'c'],
+                ['student_number' => $t17]);
         $t18 = DB::table('matrices')->where('total_subject_left','<',10)->sum('S18');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S18'],
-                ['student_number' => $t18]); 
+                ['subject_name' => 'S18','subject_group' => 'c'],
+                ['student_number' => $t18]);
         $t19 = DB::table('matrices')->where('total_subject_left','<',10)->sum('S19');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S19'],
-                ['student_number' => $t19]); 
+                ['subject_name' => 'S19','subject_group' => 'c'],
+                ['student_number' => $t19]);
         $t20 = DB::table('matrices')->where('total_subject_left','<',10)->sum('S20');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S20'],
-                ['student_number' => $t20]); 
+                ['subject_name' => 'S20','subject_group' => 'c'],
+                ['student_number' => $t20]);
         $t21 = DB::table('matrices')->where('total_subject_left','<',10)->sum('S21');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S21'],
-                ['student_number' => $t21]); 
+                ['subject_name' => 'S21','subject_group' => 'c'],
+                ['student_number' => $t21]);
         $t22 = DB::table('matrices')->where('total_subject_left','<',10)->sum('S23_E1');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S23_E1'],
-                ['student_number' => $t22]); 
+                ['subject_name' => 'S23_E1','subject_group' => 'E1'],
+                ['student_number' => $t22]);
         $t23 = DB::table('matrices')->where('total_subject_left','<',10)->sum('S24_E1');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S24_E1'],
-                ['student_number' => $t23]); 
+                ['subject_name' => 'S24_E1','subject_group' => 'E1'],
+                ['student_number' => $t23]);
         $t24 = DB::table('matrices')->where('total_subject_left','<',10)->sum('S25_E2');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S25_E2'],
-                ['student_number' => $t24]); 
+                ['subject_name' => 'S25_E2','subject_group' => 'E2'],
+                ['student_number' => $t24]);
         $t25 = DB::table('matrices')->where('total_subject_left','<',10)->sum('S26_E2');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S26_E2'],
-                ['student_number' => $t25]); 
+                ['subject_name' => 'S26_E2','subject_group' => 'E2'],
+                ['student_number' => $t25]);
         $t26 = DB::table('matrices')->where('total_subject_left','<',10)->sum('S27_E2');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S27_E2'],
-                ['student_number' => $t26]); 
+                ['subject_name' => 'S27_E2','subject_group' => 'E2'],
+                ['student_number' => $t26]);
         $t27 = DB::table('matrices')->where('total_subject_left','<',10)->sum('S28_E2');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S28_E2'],
-                ['student_number' => $t27]); 
+                ['subject_name' => 'S28_E2','subject_group' => 'E2'],
+                ['student_number' => $t27]);
         $t28 = DB::table('matrices')->where('total_subject_left','<',10)->sum('S29_E2');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S29_E2'],
-                ['student_number' => $t28]); 
+                ['subject_name' => 'S29_E2','subject_group' => 'E2'],
+                ['student_number' => $t28]);
         $t29 = DB::table('matrices')->where('total_subject_left','<',10)->sum('S30_E3');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S30_E3'],
-                ['student_number' => $t29]); 
+                ['subject_name' => 'S30_E3','subject_group' => 'E3'],
+                ['student_number' => $t29]);
         $t30 = DB::table('matrices')->where('total_subject_left','<',10)->sum('S31_E3');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S31_E3'],
-                ['student_number' => $t30]); 
+                ['subject_name' => 'S31_E3','subject_group' => 'E3'],
+                ['student_number' => $t30]);
         $t31 = DB::table('matrices')->where('total_subject_left','<',10)->sum('S32_E3');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S32_E3'],
-                ['student_number' => $t31]); 
+                ['subject_name' => 'S32_E3','subject_group' => 'E3'],
+                ['student_number' => $t31]);
         $t32 = DB::table('matrices')->where('total_subject_left','<',10)->sum('S33_E3');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S33_E3'],
-                ['student_number' => $t32]); 
+                ['subject_name' => 'S33_E3','subject_group' => 'E3'],
+                ['student_number' => $t32]);
         $t33 = DB::table('matrices')->where('total_subject_left','<',10)->sum('S34_E4');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S34_E4'],
-                ['student_number' => $t33]); 
+                ['subject_name' => 'S34_E4','subject_group' => 'E4'],
+                ['student_number' => $t33]);
         $t34 = DB::table('matrices')->where('total_subject_left','<',10)->sum('S35_E4');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S35_E4'],
-                ['student_number' => $t34]); 
+                ['subject_name' => 'S35_E4','subject_group' => 'E4'],
+                ['student_number' => $t34]);
         $t35 = DB::table('matrices')->where('total_subject_left','<',10)->sum('S36_E4');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S36_E4'],
-                ['student_number' => $t35]); 
+                ['subject_name' => 'S36_E4','subject_group' => 'E4'],
+                ['student_number' => $t35]);
         $t36 = DB::table('matrices')->where('total_subject_left','<',10)->sum('S37_E4');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S37_E4'],
-                ['student_number' => $t36]); 
+                ['subject_name' => 'S37_E4','subject_group' => 'E4'],
+                ['student_number' => $t36]);
         $t37 = DB::table('matrices')->where('total_subject_left','<',10)->sum('S22_E1');
         $s1  = DB::table('finalyear_subjects')
                 ->updateOrInsert(
-                ['subject_name' => 'S22_E1'],
-                ['student_number' => $t37]); 
+                ['subject_name' => 'S22_E1','subject_group' => 'E1'],
+                ['student_number' => $t37]);
 
         return view ('admin.final_year_subject_list')->with(compact('t1','t2','t3','t4','t5','t6','t7','t8','t9','t10','t11','t12','t13','t14','t15','t16','t17','t18','t19','t20','t21',
                                                         't22','t23','t24','t25','t26','t27','t28','t29','t30','t31','t32','t33','t34','t35','t36','t37'));
+    }
+
+    public function electiveGroup(){
+
+        $E1 = FinalyearSubject::where('subject_group', 'E1')
+            ->orderBy('student_number', 'DESC')
+            ->limit(2)
+            ->get();
+
+        $E2 = FinalyearSubject::where('subject_group', 'E2')
+            ->orderBy('student_number', 'DESC')
+            ->limit(2)
+            ->get();
+
+        $E3 = FinalyearSubject::where('subject_group', 'E3')
+            ->orderBy('student_number', 'DESC')
+            ->limit(2)
+            ->get();
+
+        $E4 = FinalyearSubject::where('subject_group', 'E4')
+            ->orderBy('student_number', 'DESC')
+            ->limit(2)
+            ->get();
+
+        return view('admin.elective')->with(compact('E1','E2','E3','E4'));
     }
 }

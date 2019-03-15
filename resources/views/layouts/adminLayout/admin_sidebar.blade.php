@@ -13,6 +13,7 @@
       <li class="{{ Request::is('admin/list-of-subject') ? 'active' : '' }}"><a href="{{url('/admin/list-of-subject')}}"><i class="icon icon-list-ol"></i> <span>List of subjects</span></a> </li>
       <li class="{{ Request::is('admin/final-year-list') ? 'active' : '' }}"><a href="{{url('/admin/final-year-list')}}"><i class="icon icon-list-ol"></i> <span>Final year student list</span></a> </li>
       <li class="{{ Request::is('admin/final-year-subject-list') ? 'active' : '' }}"><a href="{{url('/admin/final-year-subject-list')}}"><i class="icon icon-list-ol"></i> <span>Final year subject list</span></a> </li>
+      <li class="{{ Request::is('admin/elective-course') ? 'active' : '' }}"><a href="{{url('/admin/elective-course')}}"><i class="icon icon-list-ol"></i> <span>Elective course</span></a> </li>
 
     </ul>
   </div>
