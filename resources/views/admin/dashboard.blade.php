@@ -97,7 +97,7 @@
                             @endif
                             @if($t11>0)
                             <tr class="gradeX">
-                                <td>Analisa dan Rekabentuk Sistem</td>
+                                <td><a href="{{url('/admin/analisa-dan-rekabentuk-sistem')}}">Analisa dan Rekabentuk Sistem</td>
                                 <td style="text-align:center">{{ $t11 }}</td>
                             </tr>
                             @endif
@@ -109,13 +109,13 @@
                             @endif
                             @if($t13>0)
                             <tr class="gradeX">
-                                <td>Interaksi Komputer Manusia</td>
+                                <td><a href="{{url('/admin/interaksi-komputer-manusia')}}">Interaksi Komputer Manusia</td>
                                 <td style="text-align:center">{{ $t13 }}</td>
                             </tr>
                             @endif
                             @if($t14>0)
                             <tr class="gradeX">
-                                <td>Kebarangkalian dan Analisa Data Statistik</td>
+                                <td><a href="{{url('/admin/kebarangkalian-dan-analisa-data-statistik')}}">Kebarangkalian dan Analisa Data Statistik</td>
                                 <td style="text-align:center">{{ $t14 }}</td>
                             </tr>
                             @endif
@@ -145,7 +145,7 @@
                             @endif
                             @if($t19>0)
                             <tr class="gradeX">
-                                <td>Keushawanan Teknologi Maklumat dan Seminar</td>
+                                <td><a href="{{url('/admin/keushawanan-teknologi-maklumat-dan-seminar')}}">Keushawanan Teknologi Maklumat dan Seminar</td>
                                 <td style="text-align:center">{{ $t19 }}</td>
                             </tr>
                             @endif
@@ -169,7 +169,7 @@
                             @endif
                             @if($t22>0)
                             <tr class="gradeX">
-                                <td>Kejuruteraan Keperluan dan Permodelan Perisian</td>
+                                <td><a href="{{url('/admin/kejuruteraan-keperluan-dan-permodelan-perisian')}}">Kejuruteraan Keperluan dan Permodelan Perisian</td>
                                 <td style="text-align:center">{{ $t22 }}</td>
                             </tr>
                             @endif
@@ -199,7 +199,7 @@
                             @endif
                             @if($t27>0)
                             <tr class="gradeX">
-                                <td>Jaminan Kualiti Perisian</td>
+                                <td><a href="{{url('/admin/jaminan-kualiti-perisian')}}">Jaminan Kualiti Perisian</td>
                                 <td style="text-align:center">{{ $t27 }}</td>
                             </tr>
                             @endif
@@ -217,7 +217,7 @@
                             @endif
                             @if($t30>0)
                             <tr class="gradeX">
-                                <td>Kepintaran Komputer</td>
+                                <td><a href="{{url('/admin/kepintaran-komputer')}}">Kepintaran Komputer</td>
                                 <td style="text-align:center">{{ $t30 }}</td>
                             </tr>
                             @endif
@@ -241,7 +241,7 @@
                             @endif
                             @if($t34>0)
                             <tr class="gradeX">
-                                <td>Kejuruteraan Perisian Masa Nyata</td>
+                                <td><a href="{{url('/admin/kejuruteraan-perisian-masa-nyata')}}">Kejuruteraan Perisian Masa Nyata</td>
                                 <td style="text-align:center">{{ $t34 }}</td>
                             </tr>
                             @endif
@@ -253,7 +253,7 @@
                             @endif
                             @if($t36>0)
                             <tr class="gradeX">
-                                <td>Kejuruteraan Perisian Berorentasikan Ejen</td>
+                                <td><a href="{{url('/admin/kejuruteraan-perisian-berorientasikan-ejen')}}">Kejuruteraan Perisian Berorentasikan Ejen</td>
                                 <td style="text-align:center">{{ $t36 }}</td>
                             </tr>
                             @endif

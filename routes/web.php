@@ -31,6 +31,18 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/admin/final-year-subject-list','SubjectController@showSubjectListFinalYear');
     Route::get('/admin/elective-course','SubjectController@electiveGroup');
 
+
+    //route for each subject
+    Route::get('/admin/analisa-dan-rekabentuk-sistem','SubjectController@AnalisadanRekabentukSistem');
+    Route::get('/admin/interaksi-komputer-manusia','SubjectController@InteraksiKomputerManusia');
+    Route::get('/admin/jaminan-kualiti-perisian','SubjectController@JaminanKualitiPerisian');
+    Route::get('/admin/kebarangkalian-dan-analisa-data-statistik','SubjectController@KebarangkaliandanAnalisaDataStatistik');
+    Route::get('/admin/kejuruteraan-perisian-berorientasikan-ejen','SubjectController@KejuruteraanPerisianBerorentasikanEjen');
+    Route::get('/admin/kejuruteraan-perisian-masa-nyata','SubjectController@KejuruteraanPerisianMasaNyata');
+    Route::get('/admin/kepintaran-komputer','SubjectController@KepintaranKomputer');
+    Route::get('/admin/keushawanan-teknologi-maklumat-dan-seminar','SubjectController@KeushawananTeknologiMaklumatdanSeminar');
+
+
 });
 
 Route::get('/logout', 'AdminController@logout');

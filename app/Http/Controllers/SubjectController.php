@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Matrix;
+use App\Subject;
 use App\FinalyearSubject;
 use Illuminate\Support\Facades\DB;
 
@@ -647,4 +648,89 @@ class SubjectController extends Controller
 
         return view('admin.elective')->with(compact('E1','E2','E3','E4'));
     }
+
+    public function AnalisadanRekabentukSistem(){
+
+        $subject = Matrix::where([
+            ['total_subject_left', '<', '10'],
+            ['S11', '=', '1']
+            ])->get();
+        return view ('scsj_subject.Analisa dan Rekabentuk Sistem')->with(compact('subject'));
+    }
+
+    public function InteraksiKomputerManusia(){
+
+        $subject = Matrix::where([
+            ['total_subject_left', '<', '10'],
+            ['S13', '=', '1']
+            ])->get();
+        return view ('scsj_subject.Interaksi Komputer Manusia')->with(compact('subject'));
+    }
+
+    public function JaminanKualitiPerisian(){
+
+        $subject = Matrix::where([
+            ['total_subject_left', '<', '10'],
+            ['S28_E2', '=', '1']
+            ])->get();
+        return view ('scsj_subject.Jaminan Kualiti Perisian')->with(compact('subject'));
+    }
+
+    public function KebarangkaliandanAnalisaDataStatistik(){
+
+        $subject = Matrix::where([
+            ['total_subject_left', '<', '10'],
+            ['S14', '=', '1']
+            ])->get();
+        return view ('scsj_subject.Kebarangkalian dan Analisa Data Statistik')->with(compact('subject'));
+    }
+
+    public function KejuruteraanKeperluandanPermodelanPerisian(){
+
+        $subject = Matrix::where([
+            ['total_subject_left', '<', '10'],
+            ['S23_E1', '=', '1']
+            ])->get();
+        return view ('scsj_subject.Kejuruteraan Keperluan dan Permodelan Perisian')->with(compact('subject'));
+    }
+
+    public function KejuruteraanPerisianBerorentasikanEjen(){
+
+        $subject = Matrix::where([
+            ['total_subject_left', '<', '10'],
+            ['S37_E4', '=', '1']
+            ])->get();
+        return view ('scsj_subject.Kejuruteraan Perisian Berorentasikan Ejen')->with(compact('subject'));
+    }
+
+    public function KejuruteraanPerisianMasaNyata(){
+
+        $subject = Matrix::where([
+            ['total_subject_left', '<', '10'],
+            ['S35_E4', '=', '1']
+            ])->get();
+        return view ('scsj_subject.Kejuruteraan Perisian Masa Nyata')->with(compact('subject'));
+    }
+
+    public function KepintaranKomputer(){
+
+        $subject = Matrix::where([
+            ['total_subject_left', '<', '10'],
+            ['S31_E3', '=', '1']
+            ])->get();
+        return view ('scsj_subject.Kepintaran Komputer')->with(compact('subject'));
+    }
+
+    public function KeushawananTeknologiMaklumatdanSeminar(){
+
+        $subject = Matrix::where([
+            ['total_subject_left', '<', '10'],
+            ['S19', '=', '1']
+            ])->get();
+        return view ('scsj_subject.Keushawanan Teknologi Maklumat dan Seminar')->with(compact('subject'));
+    }
+
 }
+
+
+
