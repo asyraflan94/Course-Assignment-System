@@ -32,7 +32,6 @@
                             <tr>
                                 <th>Name</th>
                                 <th>Matrix No.</th>
-                                <th>Subject</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -40,7 +39,6 @@
                             <tr class="gradeX">
                                 <td>{{$stud->student_name}}</td>
                                 <td>{{$stud->matrix_no}}</td>
-                                <td>{{$stud->getSubjects()}}</td>
                             </tr>
                             @endforeach
                         </tbody>

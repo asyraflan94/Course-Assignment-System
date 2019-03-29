@@ -37,73 +37,73 @@
                         <tbody>
                             @if($t1>0)
                             <tr class="gradeX">
-                                <td><a href="{{url('/admin/teknologi-dan-sistem-maklumat')}}">Teknologi dan Sistem Maklumat</td>
+                                <td>Teknologi dan Sistem Maklumat</td>
                                 <td style="text-align:center">{{ $t1 }}</td>
                             </tr>
                             @endif
                             @if($t2>0)
                             <tr class="gradeX">
-                                <td><a href="{{url('/admin/struktur-diskrit')}}">Struktur diskrit</td>
+                                <td>Struktur diskrit</td>
                                 <td style="text-align:center">{{ $t2 }}</td>
                             </tr>
                             @endif
                             @if($t3>0)
                             <tr class="gradeX">
-                                <td><a href="{{url('/admin/teknik-pengaturcaraan-1')}}">Teknik Pengaturcaraan 1</td>
+                                <td>Teknik Pengaturcaraan 1</td>
                                 <td style="text-align:center">{{ $t3 }}</td>
                             </tr>
                             @endif
                             @if($t4>0)
                             <tr class="gradeX">
-                                <td><a href="{{url('/admin/logik-digital')}}">Logik Digital</td>
+                                <td>Logik Digital</td>
                                 <td style="text-align:center">{{ $t4 }}</td>
                             </tr>
                             @endif
                             @if($t5>0)
                             <tr class="gradeX">
-                                <td><a href="{{url('/admin/matematik-pengkomputeran')}}">Matematik Pengkomputeran</td>
+                                <td>Matematik Pengkomputeran</td>
                                 <td style="text-align:center">{{ $t5 }}</td>
                             </tr>
                             @endif
                             @if($t6>0)
                             <tr class="gradeX">
-                                <td><a href="{{url('/admin/teknik-pengaturcaraan-2')}}">Teknik Pengaturcaraan 2</td>
+                                <td>Teknik Pengaturcaraan 2</td>
                                 <td style="text-align:center">{{ $t6 }}</td>
                             </tr>
                             @endif
                             @if($t7>0)
                             <tr class="gradeX">
-                                <td><a href="{{url('/admin/komunikasi-rangkaian')}}">Komunikasi Rangkaian</td>
+                                <td>Komunikasi Rangkaian</td>
                                 <td style="text-align:center"d>{{ $t7 }}</td>
                             </tr>
                             @endif
                             @if($t8>0)
                             <tr class="gradeX">
-                                <td><a href="{{url('/admin/pengaturcaraan-web')}}">Pengaturcaraan Web</td>
+                                <td>Pengaturcaraan Web</td>
                                 <td style="text-align:center">{{ $t8 }}</td>
                             </tr>
                             @endif
                             @if($t9>0)
                             <tr class="gradeX">
-                                <td><a href="{{url('/admin/pangkalan-data')}}">Pangkalan Data</td>
+                                <td>Pangkalan Data</td>
                                 <td style="text-align:center">{{ $t9 }}</td>
                             </tr>
                             @endif
                             @if($t10>0)
                             <tr class="gradeX">
-                                <td><a href="{{url('/admin/struktur-data-dan-algoritma')}}">Struktur Data dan Algoritma</td>
+                                <td>Struktur Data dan Algoritma</td>
                                 <td style="text-align:center">{{ $t10 }}</td>
                             </tr>
                             @endif
                             @if($t11>0)
                             <tr class="gradeX">
-                                <td><a href="{{url('/admin/analisa-dan-rekabentuk-sistem')}}" target="_blank">Analisa dan Rekabentuk Sistem</td>
+                                <td><a href="{{url('/admin/analisa-dan-rekabentuk-sistem')}}">Analisa dan Rekabentuk Sistem</td>
                                 <td style="text-align:center">{{ $t11 }}</td>
                             </tr>
                             @endif
                             @if($t12>0)
                             <tr class="gradeX">
-                                <td>a href="{{url('/admin/organisasi-senibina-komputer')}}">Organisasi Senibina Komputer</td>
+                                <td>Organisasi Senibina Komputer</td>
                                 <td style="text-align:center">{{ $t12 }}</td>
                             </tr>
                             @endif
@@ -121,25 +121,25 @@
                             @endif
                             @if($t15>0)
                             <tr class="gradeX">
-                                <td><a href="{{url('/admin/pengaturcaraan-berorientasikan-objek')}}">Pengaturcaraan Berorentasikan Objek</td>
+                                <td>Pengaturcaraan Berorentasikan Objek</td>
                                 <td style="text-align:center">{{ $t15 }}</td>
                             </tr>
                             @endif
                             @if($t16>0)
                             <tr class="gradeX">
-                                <td><a href="{{url('/admin/kejuruteraan-perisian')}}">Kejuruteraan Perisian</td>
+                                <td>Kejuruteraan Perisian</td>
                                 <td style="text-align:center">{{ $t16 }}</td>
                             </tr>
                             @endif
                             @if($t17>0)
                             <tr class="gradeX">
-                                <td><a href="{{url('/admin/sistem-pengoperasian')}}">Sistem Pengoperasian</td>
+                                <td>Sistem Pengoperasian</td>
                                 <td style="text-align:center">{{ $t17 }}</td>
                             </tr>
                             @endif
                             @if($t18>0)
                             <tr class="gradeX">
-                                <td><a href="{{url('/admin/teori-sains-komputer')}}">Teori Sains Komputer</td>
+                                <td>Teori Sains Komputer</td>
                                 <td style="text-align:center">{{ $t18 }}</td>
                             </tr>
                             @endif
@@ -151,19 +151,19 @@
                             @endif
                             @if($t20>0)
                             <tr class="gradeX">
-                                <td><a href="{{url('/admin/projek-1')}}">Projek 1</td>
+                                <td>Projek 1</td>
                                 <td style="text-align:center">{{ $t20 }}</td>
                             </tr>
                             @endif
                             @if($t21>0)
                             <tr class="gradeX">
-                                <td><a href="{{url('/admin/projek-2')}}">Projek 2</td>
+                                <td>Projek 2</td>
                                 <td style="text-align:center">{{ $t21 }}</td>
                             </tr>
                             @endif
                             @if($t37>0)
                             <tr class="gradeX">
-                                <td><a href="{{url('/admin/pengaturcaraan-pangkalan-data')}}">Pengaturcaraan Pangkalan Data</td>
+                                <td>Pengaturcaraan Pangkalan Data</td>
                                 <td style="text-align:center">{{ $t37 }}</td>
                             </tr>
                             @endif
@@ -175,25 +175,25 @@
                             @endif
                             @if($t23>0)
                             <tr class="gradeX">
-                                <td><a href="{{url('/admin/pengurusan-projek-perisian')}}">Pengurusan Projek Perisian</td>
+                                <td>Pengurusan Projek Perisian</td>
                                 <td style="text-align:center">{{ $t23 }}</td>
                             </tr>
                             @endif
                             @if($t24>0)
                             <tr class="gradeX">
-                                <td><a href="{{url('/admin/kepintaran-buatan')}}">Kepintaran Buatan</td>
+                                <td>Kepintaran Buatan</td>
                                 <td style="text-align:center">{{ $t24 }}</td>
                             </tr>
                             @endif
                             @if($t25>0)
                             <tr class="gradeX">
-                                <td><a href="{{url('/admin/pembangunan-aplikasi')}}">Pembangunan Aplikasi</td>
+                                <td>Pembangunan Aplikasi</td>
                                 <td style="text-align:center">{{ $t25 }}</td>
                             </tr>
                             @endif
                             @if($t26>0)
                             <tr class="gradeX">
-                                <td><a href="{{url('/admin/pengaturcaraan-internet')}}">Pengaturcaraan Internet</td>
+                                <td>Pengaturcaraan Internet</td>
                                 <td style="text-align:center">{{ $t26 }}</td>
                             </tr>
                             @endif
@@ -205,13 +205,13 @@
                             @endif
                             @if($t28>0)
                             <tr class="gradeX">
-                                <td><a href="{{url('/admin/sistem-pakar-berasaskan-pengetahuan')}}">Sistem Pakar Berasaskan Pengetahuan</td>
+                                <td>Sistem Pakar Berasaskan Pengetahuan</td>
                                 <td style="text-align:center">{{ $t28 }}</td>
                             </tr>
                             @endif
                             @if($t29>0)
                             <tr class="gradeX">
-                                <td><a href="{{url('/admin/rekabentuk-dan-senibina-perisian')}}">Rekabentuk dan Senibina Perisian</td>
+                                <td>Rekabentuk dan Senibina Perisian</td>
                                 <td style="text-align:center">{{ $t29 }}</td>
                             </tr>
                             @endif
@@ -223,19 +223,19 @@
                             @endif
                             @if($t31>0)
                             <tr class="gradeX">
-                                <td><a href="{{url('/admin/teknik-pengaturcaraan-3')}}">Teknik Pengaturcaraan 3</td>
+                                <td>Teknik Pengaturcaraan 3</td>
                                 <td style="text-align:center">{{ $t31 }}</td>
                             </tr>
                             @endif
                             @if($t32>0)
                             <tr class="gradeX">
-                                <td><a href="{{url('/admin/topik-khas-dalam-kejuruteraan-perisian')}}">Topik Khas dalam Kejuruteraan Perisian</td>
+                                <td>Topik Khas dalam Kejuruteraan Perisian</td>
                                 <td style="text-align:center">{{ $t32 }}</td>
                             </tr>
                             @endif
                             @if($t33>0)
                             <tr class="gradeX">
-                                <td><a href="{{url('/admin/pembinaan-perisian')}}">Pembinaan Perisian</td>
+                                <td>Pembinaan Perisian</td>
                                 <td style="text-align:center">{{ $t33 }}</td>
                             </tr>
                             @endif
@@ -247,7 +247,7 @@
                             @endif
                             @if($t35>0)
                             <tr class="gradeX">
-                                <td><a href="{{url('/admin/teknologi-web')}}">Teknologi Web</td>
+                                <td>Teknologi Web</td>
                                 <td style="text-align:center">{{ $t35 }}</td>
                             </tr>
                             @endif

@@ -32,15 +32,13 @@
                             <tr>
                                 <th>Student name</th>
                                 <th>Student matrix</th>
-                                <th>Subject</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="gradeX">
-                                @foreach ($subject as $stud)
-                                    <td>{{$stud->student_name}}</td>
-                                    <td>{{$stud->matrix_no}}</td>
-                                    <td>{{$stud->getSubjects()}}</td>
+                                @foreach ($subject as $student)
+                                    <td>{{$student->student_name}}</td>
+                                    <td>{{$student->matrix_no}}</td>
                                 @endforeach
                             </tr>
                         </tbody>
