@@ -31,6 +31,9 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/admin/final-year-subject-list','SubjectController@showSubjectListFinalYear');
     Route::get('/admin/elective-course','SubjectController@electiveGroup');
 
+    //route for
+    Route::get('/admin/student/{id}','StudentController@showStudent');
+
 
     //route for each subject
     Route::get('/admin/analisa-dan-rekabentuk-sistem','SubjectController@AnalisadanRekabentukSistem');

@@ -32,16 +32,14 @@
                             <tr>
                                 <th>Name</th>
                                 <th>Matrix No.</th>
-                                <th>Subject</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($subject as $stud)
                             <tr class="gradeX">
-                                <td>{{$stud->student_name}}</td>
+                                <td><a href="{{url('/admin/student/'.$stud->id)}}">{{$stud->student_name}}</td>
                                 <td>{{$stud->matrix_no}}</td>
-                                <td>{{$stud->getSubjects()}}</td>
-                            </tr>
+]                            </tr>
                             @endforeach
                         </tbody>
                     </table>
