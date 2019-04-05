@@ -37,7 +37,7 @@
                         <tbody>
                             @foreach ($subject as $stud)
                             <tr class="gradeX">
-                                <td><a href="{{url('/admin/student/'.$stud->id)}}">{{$stud->student_name}}</td>
+                                <td><a href="{{url('/admin/student/'.$stud->id)}}" target="_blank">{{$stud->student_name}}</td>
                                 <td>{{$stud->matrix_no}}</td>
 ]                            </tr>
                             @endforeach

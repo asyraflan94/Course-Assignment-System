@@ -27,11 +27,9 @@
                     <h5>Final Year Subject List</h5>
                 </div>
                 <div class="widget-content nopadding">
-                    <table class="table table-bordered data-table with-check">
+                    <table class="table table-bordered data-table">
                         <thead>
                             <tr>
-                                {{-- <th><input type="checkbox" name=""id="title-table-checkbox" name="title-table-checkbox" /></th> --}}
-                                <th></th>
                                 <th>Subject name</th>
                                 <th>No. of students</th>
                             </tr>
@@ -39,260 +37,258 @@
                         <tbody>
                             @if($t1>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name="Teknologi dan Sistem Maklumat"/></td>
-                                <td><a href="{{url('/admin/teknologi-dan-sistem-maklumat')}}">Teknologi dan Sistem Maklumat</td>
+                                <td><a href="{{url('/admin/teknologi-dan-sistem-maklumat')}}" target="_blank">Teknologi dan Sistem Maklumat</td>
                                 <td style="text-align:center">{{ $t1 }}</td>
                             </tr>
                             @endif
                             @if($t2>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/struktur-diskrit')}}">Struktur diskrit</td>
+                                <td><a href="{{url('/admin/struktur-diskrit')}}" target="_blank">Struktur diskrit</td>
                                 <td style="text-align:center">{{ $t2 }}</td>
                             </tr>
                             @endif
                             @if($t3>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/teknik-pengaturcaraan-1')}}">Teknik Pengaturcaraan 1</td>
+
+                                <td><a href="{{url('/admin/teknik-pengaturcaraan-1')}}" target="_blank">Teknik Pengaturcaraan 1</td>
                                 <td style="text-align:center">{{ $t3 }}</td>
                             </tr>
                             @endif
                             @if($t4>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/logik-digital')}}">Logik Digital</td>
+
+                                <td><a href="{{url('/admin/logik-digital')}}" target="_blank">Logik Digital</td>
                                 <td style="text-align:center">{{ $t4 }}</td>
                             </tr>
                             @endif
                             @if($t5>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/matematik-pengkomputeran')}}">Matematik Pengkomputeran</td>
+
+                                <td><a href="{{url('/admin/matematik-pengkomputeran')}}" target="_blank">Matematik Pengkomputeran</td>
                                 <td style="text-align:center">{{ $t5 }}</td>
                             </tr>
                             @endif
                             @if($t6>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/teknik-pengaturcaraan-2')}}">Teknik Pengaturcaraan 2</td>
+
+                                <td><a href="{{url('/admin/teknik-pengaturcaraan-2')}}" target="_blank">Teknik Pengaturcaraan 2</td>
                                 <td style="text-align:center">{{ $t6 }}</td>
                             </tr>
                             @endif
                             @if($t7>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/komunikasi-rangkaian')}}">Komunikasi Rangkaian</td>
+
+                                <td><a href="{{url('/admin/komunikasi-rangkaian')}}" target="_blank">Komunikasi Rangkaian</td>
                                 <td style="text-align:center"d>{{ $t7 }}</td>
                             </tr>
                             @endif
                             @if($t8>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/pengaturcaraan-web')}}">Pengaturcaraan Web</td>
+
+                                <td><a href="{{url('/admin/pengaturcaraan-web')}}" target="_blank">Pengaturcaraan Web</td>
                                 <td style="text-align:center">{{ $t8 }}</td>
                             </tr>
                             @endif
                             @if($t9>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/pangkalan-data')}}">Pangkalan Data</td>
+
+                                <td><a href="{{url('/admin/pangkalan-data')}}" target="_blank">Pangkalan Data</td>
                                 <td style="text-align:center">{{ $t9 }}</td>
                             </tr>
                             @endif
                             @if($t10>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/struktur-data-dan-algoritma')}}">Struktur Data dan Algoritma</td>
+
+                                <td><a href="{{url('/admin/struktur-data-dan-algoritma')}}" target="_blank">Struktur Data dan Algoritma</td>
                                 <td style="text-align:center">{{ $t10 }}</td>
                             </tr>
                             @endif
                             @if($t11>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
+
                                 <td><a href="{{url('/admin/analisa-dan-rekabentuk-sistem')}}" target="_blank">Analisa dan Rekabentuk Sistem</td>
                                 <td style="text-align:center">{{ $t11 }}</td>
                             </tr>
                             @endif
                             @if($t12>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td>a href="{{url('/admin/organisasi-senibina-komputer')}}">Organisasi Senibina Komputer</td>
+
+                                <td><a href="{{url('/admin/organisasi-senibina-komputer')}}" target="_blank">Organisasi Senibina Komputer</td>
                                 <td style="text-align:center">{{ $t12 }}</td>
                             </tr>
                             @endif
                             @if($t13>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/interaksi-komputer-manusia')}}">Interaksi Komputer Manusia</td>
+
+                                <td><a href="{{url('/admin/interaksi-komputer-manusia')}}" target="_blank">Interaksi Komputer Manusia</td>
                                 <td style="text-align:center">{{ $t13 }}</td>
                             </tr>
                             @endif
                             @if($t14>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/kebarangkalian-dan-analisa-data-statistik')}}">Kebarangkalian dan Analisa Data Statistik</td>
+
+                                <td><a href="{{url('/admin/kebarangkalian-dan-analisa-data-statistik')}}" target="_blank">Kebarangkalian dan Analisa Data Statistik</td>
                                 <td style="text-align:center">{{ $t14 }}</td>
                             </tr>
                             @endif
                             @if($t15>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/pengaturcaraan-berorientasikan-objek')}}">Pengaturcaraan Berorentasikan Objek</td>
+
+                                <td><a href="{{url('/admin/pengaturcaraan-berorientasikan-objek')}}" target="_blank">Pengaturcaraan Berorentasikan Objek</td>
                                 <td style="text-align:center">{{ $t15 }}</td>
                             </tr>
                             @endif
                             @if($t16>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/kejuruteraan-perisian')}}">Kejuruteraan Perisian</td>
+
+                                <td><a href="{{url('/admin/kejuruteraan-perisian')}}" target="_blank">Kejuruteraan Perisian</td>
                                 <td style="text-align:center">{{ $t16 }}</td>
                             </tr>
                             @endif
                             @if($t17>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/sistem-pengoperasian')}}">Sistem Pengoperasian</td>
+
+                                <td><a href="{{url('/admin/sistem-pengoperasian')}}" target="_blank">Sistem Pengoperasian</td>
                                 <td style="text-align:center">{{ $t17 }}</td>
                             </tr>
                             @endif
                             @if($t18>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/teori-sains-komputer')}}">Teori Sains Komputer</td>
+
+                                <td><a href="{{url('/admin/teori-sains-komputer')}}" target="_blank">Teori Sains Komputer</td>
                                 <td style="text-align:center">{{ $t18 }}</td>
                             </tr>
                             @endif
                             @if($t19>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/keushawanan-teknologi-maklumat-dan-seminar')}}">Keushawanan Teknologi Maklumat dan Seminar</td>
+
+                                <td><a href="{{url('/admin/keushawanan-teknologi-maklumat-dan-seminar')}}" target="_blank">Keushawanan Teknologi Maklumat dan Seminar</td>
                                 <td style="text-align:center">{{ $t19 }}</td>
                             </tr>
                             @endif
                             @if($t20>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/projek-1')}}">Projek 1</td>
+
+                                <td><a href="{{url('/admin/projek-1')}}" target="_blank">Projek 1</td>
                                 <td style="text-align:center">{{ $t20 }}</td>
                             </tr>
                             @endif
                             @if($t21>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/projek-2')}}">Projek 2</td>
+
+                                <td><a href="{{url('/admin/projek-2')}}" target="_blank">Projek 2</td>
                                 <td style="text-align:center">{{ $t21 }}</td>
                             </tr>
                             @endif
                             @if($t37>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/pengaturcaraan-pangkalan-data')}}">Pengaturcaraan Pangkalan Data</td>
+
+                                <td><a href="{{url('/admin/pengaturcaraan-pangkalan-data')}}" target="_blank">Pengaturcaraan Pangkalan Data</td>
                                 <td style="text-align:center">{{ $t37 }}</td>
                             </tr>
                             @endif
                             @if($t22>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/kejuruteraan-keperluan-dan-permodelan-perisian')}}">Kejuruteraan Keperluan dan Permodelan Perisian</td>
+
+                                <td><a href="{{url('/admin/kejuruteraan-keperluan-dan-permodelan-perisian')}}" target="_blank">Kejuruteraan Keperluan dan Permodelan Perisian</td>
                                 <td style="text-align:center">{{ $t22 }}</td>
                             </tr>
                             @endif
                             @if($t23>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/pengurusan-projek-perisian')}}">Pengurusan Projek Perisian</td>
+
+                                <td><a href="{{url('/admin/pengurusan-projek-perisian')}}" target="_blank">Pengurusan Projek Perisian</td>
                                 <td style="text-align:center">{{ $t23 }}</td>
                             </tr>
                             @endif
                             @if($t24>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/kepintaran-buatan')}}">Kepintaran Buatan</td>
+
+                                <td><a href="{{url('/admin/kepintaran-buatan')}}" target="_blank">Kepintaran Buatan</td>
                                 <td style="text-align:center">{{ $t24 }}</td>
                             </tr>
                             @endif
                             @if($t25>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/pembangunan-aplikasi')}}">Pembangunan Aplikasi</td>
+
+                                <td><a href="{{url('/admin/pembangunan-aplikasi')}}" target="_blank">Pembangunan Aplikasi</td>
                                 <td style="text-align:center">{{ $t25 }}</td>
                             </tr>
                             @endif
                             @if($t26>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/pengaturcaraan-internet')}}">Pengaturcaraan Internet</td>
+
+                                <td><a href="{{url('/admin/pengaturcaraan-internet')}}" target="_blank">Pengaturcaraan Internet</td>
                                 <td style="text-align:center">{{ $t26 }}</td>
                             </tr>
                             @endif
                             @if($t27>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/jaminan-kualiti-perisian')}}">Jaminan Kualiti Perisian</td>
+
+                                <td><a href="{{url('/admin/jaminan-kualiti-perisian')}}" target="_blank">Jaminan Kualiti Perisian</td>
                                 <td style="text-align:center">{{ $t27 }}</td>
                             </tr>
                             @endif
                             @if($t28>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/sistem-pakar-berasaskan-pengetahuan')}}">Sistem Pakar Berasaskan Pengetahuan</td>
+
+                                <td><a href="{{url('/admin/sistem-pakar-berasaskan-pengetahuan')}}" target="_blank">Sistem Pakar Berasaskan Pengetahuan</td>
                                 <td style="text-align:center">{{ $t28 }}</td>
                             </tr>
                             @endif
                             @if($t29>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/rekabentuk-dan-senibina-perisian')}}">Rekabentuk dan Senibina Perisian</td>
+
+                                <td><a href="{{url('/admin/rekabentuk-dan-senibina-perisian')}}" target="_blank">Rekabentuk dan Senibina Perisian</td>
                                 <td style="text-align:center">{{ $t29 }}</td>
                             </tr>
                             @endif
                             @if($t30>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/kepintaran-komputer')}}">Kepintaran Komputer</td>
+
+                                <td><a href="{{url('/admin/kepintaran-komputer')}}" target="_blank">Kepintaran Komputer</td>
                                 <td style="text-align:center">{{ $t30 }}</td>
                             </tr>
                             @endif
                             @if($t31>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/teknik-pengaturcaraan-3')}}">Teknik Pengaturcaraan 3</td>
+
+                                <td><a href="{{url('/admin/teknik-pengaturcaraan-3')}}" target="_blank">Teknik Pengaturcaraan 3</td>
                                 <td style="text-align:center">{{ $t31 }}</td>
                             </tr>
                             @endif
                             @if($t32>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/topik-khas-dalam-kejuruteraan-perisian')}}">Topik Khas dalam Kejuruteraan Perisian</td>
+
+                                <td><a href="{{url('/admin/topik-khas-dalam-kejuruteraan-perisian')}}" target="_blank">Topik Khas dalam Kejuruteraan Perisian</td>
                                 <td style="text-align:center">{{ $t32 }}</td>
                             </tr>
                             @endif
                             @if($t33>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/pembinaan-perisian')}}">Pembinaan Perisian</td>
+
+                                <td><a href="{{url('/admin/pembinaan-perisian')}}" target="_blank">Pembinaan Perisian</td>
                                 <td style="text-align:center">{{ $t33 }}</td>
                             </tr>
                             @endif
                             @if($t34>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/kejuruteraan-perisian-masa-nyata')}}">Kejuruteraan Perisian Masa Nyata</td>
+
+                                <td><a href="{{url('/admin/kejuruteraan-perisian-masa-nyata')}}" target="_blank">Kejuruteraan Perisian Masa Nyata</td>
                                 <td style="text-align:center">{{ $t34 }}</td>
                             </tr>
                             @endif
                             @if($t35>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/teknologi-web')}}">Teknologi Web</td>
+
+                                <td><a href="{{url('/admin/teknologi-web')}}" target="_blank">Teknologi Web</td>
                                 <td style="text-align:center">{{ $t35 }}</td>
                             </tr>
                             @endif
                             @if($t36>0)
                             <tr class="gradeX">
-                                <td><input type="checkbox" name=""/></td>
-                                <td><a href="{{url('/admin/kejuruteraan-perisian-berorientasikan-ejen')}}">Kejuruteraan Perisian Berorentasikan Ejen</td>
+
+                                <td><a href="{{url('/admin/kejuruteraan-perisian-berorientasikan-ejen')}}" target="_blank">Kejuruteraan Perisian Berorentasikan Ejen</td>
                                 <td style="text-align:center">{{ $t36 }}</td>
                             </tr>
                             @endif

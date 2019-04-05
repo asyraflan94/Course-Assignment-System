@@ -167,7 +167,7 @@
                             </tr>
                             <tr class="gradeX">
                                 <td style="text-align:center">SCSJ3104</td>
-                                <td>Applicatin Development</td>
+                                <td>Application Development</td>
                                 <td style="text-align:center">{{$student->S26_E2}}</td>
                             </tr>
                             <tr class="gradeX">
@@ -189,11 +189,6 @@
                                 <td style="text-align:center">SCSJ3603</td>
                                 <td>Knowledge-based & Expert System</td>
                                 <td style="text-align:center">{{$student->S29_E2}}</td>
-                            </tr>
-                            <tr class="gradeX">
-                                <td style="text-align:center">SCSJ2203</td>
-                                <td>Software Engineering</td>
-                                <td style="text-align:center">{{$student->S16}}</td>
                             </tr>
                             <tr class="gradeX">
                                 <td colspan="3" style="text-align:center"><i><b>Elective Courses - Choose 1(3 Credits)</b></i></td>

@@ -423,11 +423,6 @@ class SubjectController extends Controller
 
         $finalyear_students = Matrix::where('total_subject_left','<',10)->get();
 
-        // DB::table('finalyear_students')
-        //     ->updateOrInsert(
-        //         ['student_name'=>$finalyear_students->student_name],
-        //         ['subject'=>$finalyear_students->getSubjects()]);
-
         return view('admin.final_year_list')->with(compact('finalyear_students'));
     }
 
@@ -981,6 +976,7 @@ class SubjectController extends Controller
             ])->get();
         return view ('scsj_subject.Topik Khas dalam Kejuruteraan Perisian')->with(compact('subject'));
     }
+
 
 }
 

@@ -16,16 +16,6 @@
 CREATE DATABASE IF NOT EXISTS `psm` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */;
 USE `psm`;
 
--- Dumping structure for table psm.finalyear_students
-CREATE TABLE IF NOT EXISTS `finalyear_students` (
-  `student_name` varchar(50) DEFAULT NULL,
-  `subject` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- Dumping data for table psm.finalyear_students: ~0 rows (approximately)
-/*!40000 ALTER TABLE `finalyear_students` DISABLE KEYS */;
-/*!40000 ALTER TABLE `finalyear_students` ENABLE KEYS */;
-
 -- Dumping structure for table psm.finalyear_subjects
 CREATE TABLE IF NOT EXISTS `finalyear_subjects` (
   `subject_name` varchar(50) DEFAULT NULL,
@@ -856,6 +846,28 @@ INSERT IGNORE INTO `subjects` (`short_name`, `subject_name`, `subject_code`) VAL
 	('S9', 'PANGKALAN DATA', 'SCSD2523');
 /*!40000 ALTER TABLE `subjects` ENABLE KEYS */;
 
+-- Dumping structure for table psm.temporary_subjects
+CREATE TABLE IF NOT EXISTS `temporary_subjects` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `subject_name` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
+  `subject_long_name` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
+  `subject_code` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Dumping data for table psm.temporary_subjects: ~8 rows (approximately)
+/*!40000 ALTER TABLE `temporary_subjects` DISABLE KEYS */;
+INSERT IGNORE INTO `temporary_subjects` (`id`, `subject_name`, `subject_long_name`, `subject_code`) VALUES
+	(1, 'S31_E3', 'Computer Intelligence', 'SCSJ3563'),
+	(2, 'S32_E3', 'Programming Technique 3', 'SCSJ3253'),
+	(3, 'S30_E3', 'Software Design & Architecture', 'SCSJ3323'),
+	(4, 'S33_E3', 'Special Topic in Software Engineering', 'SCSJ3403'),
+	(5, 'S33 _E3', 'Special Topic in Software Engineering', 'SCSJ3403'),
+	(6, 'S36_E4', 'Web Technology', 'SCSJ4483'),
+	(7, 'S37_E4', 'Agent-Oriented Software Engineering', 'SCSJ4463'),
+	(8, 'S35_E4', 'Real-Time Software Engineering', 'SCSJ4423');
+/*!40000 ALTER TABLE `temporary_subjects` ENABLE KEYS */;
+
 -- Dumping structure for table psm.users
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -874,7 +886,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Dumping data for table psm.users: ~0 rows (approximately)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT IGNORE INTO `users` (`id`, `name`, `username`, `email_verified_at`, `password`, `admin`, `remember_token`, `created_at`, `updated_at`) VALUES
-	(1, 'Asyraf', 'B16CS0006', '2019-01-31 02:36:48', '$2y$10$u84Uyn1CGUaKBRpa8wG2yuhzBk60NfClYr9dVoEG.CjCkb6w0mVYm', 1, NULL, '2019-01-30 13:14:16', '2019-02-02 16:01:45');
+	(1, 'Asyraf', 'B16CS0006', '2019-01-31 02:36:48', '$2y$10$u84Uyn1CGUaKBRpa8wG2yuhzBk60NfClYr9dVoEG.CjCkb6w0mVYm', 1, 'ouiLxjmLyDDVZIEwjcoPpb0212UjuaiJ7IC4ijlWQDCPr0rfOG1nSG3jAcnV', '2019-01-30 13:14:16', '2019-02-02 16:01:45');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
