@@ -30,13 +30,15 @@
                     <table class="table table-bordered data-table">
                         <thead>
                             <tr>
+                                <th>No.</th>
                                 <th>Student name</th>
                                 <th>Student matrix</th>
                             </tr>
                         </thead>
                         <tbody>
-                        @foreach ($subject as $stud)
+                        @foreach ($subject as $index => $stud)
                             <tr class="gradeX">
+                                <td style="text-align:center">{{$index +1}}</td>
                                 <td><a href="{{url('/admin/student/'.$stud->id)}}" target="_blank">{{$stud->student_name}}</td>
                                 <td>{{$stud->matrix_no}}</td>
                             </tr>
