@@ -28,7 +28,7 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/admin/list-of-subject','SubjectController@showSubjectList');
     Route::get('/admin/show-matrix','SubjectController@showMatrix');
     Route::get('/admin/final-year-list','SubjectController@showFinalYear');
-    Route::get('/admin/final-year-subject-list','SubjectController@showSubjectListFinalYear');
+    //Route::get('/admin/final-year-subject-list','SubjectController@showSubjectListFinalYear');
     Route::get('/admin/elective-course','TemporaryController@electiveGroup');
 
     //route for each student detail
@@ -36,43 +36,43 @@ Route::group(['middleware' => ['auth']], function(){
 
 
     //route for each subject
-    Route::get('/admin/analisa-dan-rekabentuk-sistem','SubjectController@AnalisadanRekabentukSistem');
-    Route::get('/admin/interaksi-komputer-manusia','SubjectController@InteraksiKomputerManusia');
-    Route::get('/admin/jaminan-kualiti-perisian','SubjectController@JaminanKualitiPerisian');
-    Route::get('/admin/kebarangkalian-dan-analisa-data-statistik','SubjectController@KebarangkaliandanAnalisaDataStatistik');
-    Route::get('/admin/kejuruteraan-keperluan-dan-permodelan-perisian','SubjectController@KejuruteraanKeperluandanPermodelanPerisian');
-    Route::get('/admin/kejuruteraan-perisian-berorientasikan-ejen','SubjectController@KejuruteraanPerisianBerorentasikanEjen');
-    Route::get('/admin/kejuruteraan-perisian-masa-nyata','SubjectController@KejuruteraanPerisianMasaNyata');
-    Route::get('/admin/kepintaran-komputer','SubjectController@KepintaranKomputer');
-    Route::get('/admin/keushawanan-teknologi-maklumat-dan-seminar','SubjectController@KeushawananTeknologiMaklumatdanSeminar');
-    Route::get('/admin/kejuruteraan-perisian','SubjectController@KejuruteraanPerisian');
-    Route::get('/admin/kepintaran-buatan','SubjectController@KepintaranBuatan');
-    Route::get('/admin/komunikasi-rangkaian','SubjectController@KomunikasiRangkaian');
-    Route::get('/admin/logik-digital','SubjectController@LogikDigital');
-    Route::get('/admin/matematik-pengkomputeran','SubjectController@MatematikPengkomputeran');
-    Route::get('/admin/organisasi-senibina-komputer','SubjectController@OrganisasiSenibinaKomputer');
-    Route::get('/admin/pangkalan-data','SubjectController@PangkalanData');
-    Route::get('/admin/pembangunan-aplikasi','SubjectController@PembangunanAplikasi');
-    Route::get('/admin/pembinaan-perisian','SubjectController@PembinaanPerisian');
-    Route::get('/admin/pengaturcaraan-berorientasikan-objek','SubjectController@PengaturcaraanBerorentasikanObjek');
-    Route::get('/admin/pengaturcaraan-internet','SubjectController@PengaturcaraanInternet');
+    Route::get('/admin/system-analysis-and-design','SubjectController@AnalisadanRekabentukSistem');
+    Route::get('/admin/human-computer-interaction','SubjectController@InteraksiKomputerManusia');
+    Route::get('/admin/software-quality-assurance','SubjectController@JaminanKualitiPerisian');
+    Route::get('/admin/probability-and-statistical-data-analysis','SubjectController@KebarangkaliandanAnalisaDataStatistik');
+    Route::get('/admin/requirement-engineering-and-software-modeling','SubjectController@KejuruteraanKeperluandanPermodelanPerisian');
+    Route::get('/admin/agent-oriented-software-engineering','SubjectController@KejuruteraanPerisianBerorentasikanEjen');
+    Route::get('/admin/real-time-software-engineering','SubjectController@KejuruteraanPerisianMasaNyata');
+    Route::get('/admin/computational-intelligence','SubjectController@KepintaranKomputer');
+    Route::get('/admin/technopreneurship-and-seminar','SubjectController@KeushawananTeknologiMaklumatdanSeminar');
+    Route::get('/admin/software-engineering','SubjectController@KejuruteraanPerisian');
+    Route::get('/admin/artificial-intelligent','SubjectController@KepintaranBuatan');
+    Route::get('/admin/network-communication','SubjectController@KomunikasiRangkaian');
+    Route::get('/admin/digital-logic','SubjectController@LogikDigital');
+    Route::get('/admin/computational-mathematic','SubjectController@MatematikPengkomputeran');
+    Route::get('/admin/computer-organisation-and-architecture','SubjectController@OrganisasiSenibinaKomputer');
+    Route::get('/admin/database','SubjectController@PangkalanData');
+    Route::get('/admin/application-development','SubjectController@PembangunanAplikasi');
+    Route::get('/admin/software-construction','SubjectController@PembinaanPerisian');
+    Route::get('/admin/object-oriented-programming','SubjectController@PengaturcaraanBerorentasikanObjek');
+    Route::get('/admin/internet-programming','SubjectController@PengaturcaraanInternet');
     Route::get('/admin/pengaturcaraan-pangkalan-data','SubjectController@PengaturcaraanPangkalanData');
-    Route::get('/admin/pengaturcaraan-web','SubjectController@PengaturcaraanWeb');
-    Route::get('/admin/pengurusan-projek-perisian','SubjectController@PengurusanProjekPerisian');
-    Route::get('/admin/projek-1','SubjectController@Projek1');
-    Route::get('/admin/projek-2','SubjectController@Projek2');
-    Route::get('/admin/rekabentuk-dan-senibina-perisian','SubjectController@RekabentukdanSenibinaPerisian');
-    Route::get('/admin/sistem-pakar-berasaskan-pengetahuan','SubjectController@SistemPakarBerasaskanPengetahuan');
-    Route::get('/admin/sistem-pengoperasian','SubjectController@SistemPengoperasian');
-    Route::get('/admin/struktur-data-dan-algoritma','SubjectController@StrukturDatadanAlgoritma');
-    Route::get('/admin/struktur-diskrit','SubjectController@StrukturDiskrit');
-    Route::get('/admin/teknik-pengaturcaraan-1','SubjectController@TeknikPengaturcaraan1');
-    Route::get('/admin/teknik-pengaturcaraan-2','SubjectController@TeknikPengaturcaraan2');
-    Route::get('/admin/teknik-pengaturcaraan-3','SubjectController@TeknikPengaturcaraan3');
-    Route::get('/admin/teknologi-dan-sistem-maklumat','SubjectController@TeknologidanSistemMaklumat');
-    Route::get('/admin/teknologi-web','SubjectController@TeknologiWeb');
-    Route::get('/admin/teori-sains-komputer','SubjectController@TeoriSainsKomputer');
-    Route::get('/admin/topik-khas-dalam-kejuruteraan-perisian','SubjectController@TopikKhasdalamKejuruteraanPerisian');
+    Route::get('/admin/web-programming','SubjectController@PengaturcaraanWeb');
+    Route::get('/admin/software-project-management','SubjectController@PengurusanProjekPerisian');
+    Route::get('/admin/software-engineering-project-1','SubjectController@Projek1');
+    Route::get('/admin/software-engineering-project-2','SubjectController@Projek2');
+    Route::get('/admin/software-design-and-architecture','SubjectController@RekabentukdanSenibinaPerisian');
+    Route::get('/admin/knowledge-based-and-expert-system','SubjectController@SistemPakarBerasaskanPengetahuan');
+    Route::get('/admin/operating-system','SubjectController@SistemPengoperasian');
+    Route::get('/admin/data-structures-and-algorithm','SubjectController@StrukturDatadanAlgoritma');
+    Route::get('/admin/discrete-structure','SubjectController@StrukturDiskrit');
+    Route::get('/admin/programming-technique-1','SubjectController@TeknikPengaturcaraan1');
+    Route::get('/admin/programming-technique-2','SubjectController@TeknikPengaturcaraan2');
+    Route::get('/admin/programming-technique-3','SubjectController@TeknikPengaturcaraan3');
+    Route::get('/admin/technology-and-information-system','SubjectController@TeknologidanSistemMaklumat');
+    Route::get('/admin/web-technology','SubjectController@TeknologiWeb');
+    Route::get('/admin/theory-of-computer-science','SubjectController@TeoriSainsKomputer');
+    Route::get('/admin/special-topic-in-software-engineering','SubjectController@TopikKhasdalamKejuruteraanPerisian');
 
 
 });
