@@ -427,30 +427,6 @@ class SubjectController extends Controller
         return view('admin.final_year_list')->with(compact('finalyear_students'));
     }
 
-    public function electiveGroup(){
-
-        $E1 = FinalyearSubject::where('subject_group', 'E1')
-            ->orderBy('student_number', 'DESC')
-            ->limit(1)
-            ->get();
-
-        $E2 = FinalyearSubject::where('subject_group', 'E2')
-            ->orderBy('student_number', 'DESC')
-            ->limit(2)
-            ->get();
-
-        $E3 = FinalyearSubject::where('subject_group', 'E3')
-            ->orderBy('student_number', 'DESC')
-            ->limit(2)
-            ->get();
-
-        $E4 = FinalyearSubject::where('subject_group', 'E4')
-            ->orderBy('student_number', 'DESC')
-            ->limit(2)
-            ->get();
-
-        return view('admin.elective')->with(compact('E1','E2','E3','E4'));
-    }
 
     public function AnalisadanRekabentukSistem(){
 

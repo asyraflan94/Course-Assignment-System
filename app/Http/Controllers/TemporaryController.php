@@ -309,6 +309,26 @@ class TemporaryController extends Controller{
                         $subj = TemporarySubject::updateOrCreate(
                             ['subject_name' => 'S33 _E3','subject_code' => 'SCSJ3403','subject_long_name' => 'Special Topic in Software Engineering','subject_type'=>'elective 3']);
                     }
+
+                    if ($rows->S34_E4=='1'){
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S34_E4','subject_code' => 'SCSJ4383','subject_long_name' => 'Software Construction','subject_type'=>'elective 4']);
+                    }
+
+                    if ($rows->S35_E4=='1') {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S35_E4','subject_code' => 'SCSJ4423','subject_long_name' => 'Real-Time Software Engineering','subject_type'=>'elective 4']);
+                    }
+
+                    if ($rows->S36_E4=='1'){
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S36_E4','subject_code' => 'SCSJ4483','subject_long_name' => 'Web Technology','subject_type'=>'elective 4']);
+                    }
+
+                    if ($rows->S37_E4=='1'){
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S37_E4','subject_code' => 'SCSJ4463','subject_long_name' => 'Agent-Oriented Software Engineering','subject_type'=>'elective 4']);
+                    }
                 }
             }
         //return view('offer subject')->with(compact('subj'));
