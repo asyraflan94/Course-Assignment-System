@@ -9,7 +9,7 @@ use App\TemporarySubject;
 class TemporaryController extends Controller{
 
     //remove constraints
-    public function electiveGroup(){
+    public function generateSubject(){
 
         //elective E2
         $S25_E2 = Matrix::where('total_subject_left','<',10)->sum('S25_E2');
@@ -71,107 +71,244 @@ class TemporaryController extends Controller{
                 // }
 
                 // remove constrain if the subject remaining is the only choice either (S25/S26/S27/S28/S29)
-                if (($rows->S25_E2=='1') && ($rows->S25_E2+$rows->S26_E2+$rows->S27_E2+$rows->S28_E2+$rows->S29_E2 > '1')){
-                    if ($S25_E2 > max($S26_E2,$S27_E2,$S28_E2,$S29_E2)) {
+
+                //special condition if all rows for E2 == 4 means the student didnt take any subject yet from E2 yet, the system will offer subject with greatest value
+                if ($rows->S25_E2+$rows->S27_E2+$rows->S28_E2+$rows->S29_E2 == '4') {
+                    if ($S25_E2 > max($S27_E2,$S28_E2,$S29_E2)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S25_E2','subject_code' => 'SCSJ3553','subject_long_name' => 'Artificial Intelligent','subject_type'=>'elective 2']);
+                    }
+                    elseif ($S27_E2 > max($S25_E2,$S28_E2,$S29_E2)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S27_E2','subject_code' => 'SCSJ3303','subject_long_name' => 'Internet Programming','subject_type'=>'elective 2']);
+                    }
+                    elseif ($S28_E2 > max($S25_E2,$S27_E2,$S29_E2)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S28_E2','subject_code' => 'SCSJ3343','subject_long_name' => 'Software Quality Assurance','subject_type'=>'elective 2']);
+                    }
+                    elseif ($S29_E2 > max($S25_E2,$S27_E2,$S28_E2)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S29_E2','subject_code' => 'SCSJ3603','subject_long_name' => 'Knowledge-Based & Expert System','subject_type'=>'elective 2']);
+                    }
+                }
+
+                //condition to rotate 3 out of 4 subject and offer the biggest one
+                if (($rows->S25_E2=='1') && ($rows->S25_E2+$rows->S27_E2+$rows->S28_E2+$rows->S29_E2 > '1')){
+                    if (($rows->S25_E2+$rows->S27_E2=='2') && ($S25_E2>$S27_E2)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S25_E2','subject_code' => 'SCSJ3553','subject_long_name' => 'Artificial Intelligent','subject_type'=>'elective 2']);
+                    }
+                    elseif (($rows->S25_E2+$rows->S28_E2=='2') && ($S25_E2>$S28_E2)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S25_E2','subject_code' => 'SCSJ3553','subject_long_name' => 'Artificial Intelligent','subject_type'=>'elective 2']);
+                    }
+                    elseif (($rows->S25_E2+$rows->S29_E2=='2') && ($S25_E2>$S29_E2)) {
                         $subj = TemporarySubject::updateOrCreate(
                             ['subject_name' => 'S25_E2','subject_code' => 'SCSJ3553','subject_long_name' => 'Artificial Intelligent','subject_type'=>'elective 2']);
                     }
                 }
 
-                if (($rows->S26_E2=='1') && ($rows->S25_E2+$rows->S26_E2+$rows->S27_E2+$rows->S28_E2+$rows->S29_E2 > '1')){
-                    if ($S26_E2 > max($S25_E2,$S27_E2,$S28_E2,$S29_E2)) {
+                if (($rows->S27_E2=='1') && ($rows->S25_E2+$rows->S27_E2+$rows->S28_E2+$rows->S29_E2 > '1')){
+                    if (($rows->S27_E2+$rows->S28_E2=='2') && ($S27_E2>$S28_E2)) {
                         $subj = TemporarySubject::updateOrCreate(
-                            ['subject_name' => 'S26_E2','subject_code' => 'SCSJ3104','subject_long_name' => 'Application Development','subject_type'=>'elective 2']);
+                            ['subject_name' => 'S27_E2','subject_code' => 'SCSJ3303','subject_long_name' => 'Internet Programming','subject_type'=>'elective 2']);
                     }
-                }
-
-                if (($rows->S27_E2=='1') && ($rows->S25_E2+$rows->S26_E2+$rows->S27_E2+$rows->S28_E2+$rows->S29_E2 > '1')){
-                    if ($S27_E2 > max($S25_E2,$S26_E2,$S28_E2,$S29_E2)) {
+                    else if (($rows->S27_E2+$rows->S25_E2=='2') && ($S27_E2>$S25_E2)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S27_E2','subject_code' => 'SCSJ3303','subject_long_name' => 'Internet Programming','subject_type'=>'elective 2']);
+                    }
+                    else if (($rows->S27_E2+$rows->S29_E2=='2') && ($S27_E2>$S29_E2)) {
                         $subj = TemporarySubject::updateOrCreate(
                             ['subject_name' => 'S27_E2','subject_code' => 'SCSJ3303','subject_long_name' => 'Internet Programming','subject_type'=>'elective 2']);
                     }
                 }
 
-                if (($rows->S28_E2=='1') && ($rows->S25_E2+$rows->S26_E2+$rows->S27_E2+$rows->S28_E2+$rows->S29_E2 > '1')){
-                    if ($S28_E2 > max($S25_E2,$S26_E2,$S27_E2,$S29_E2)) {
+                if (($rows->S28_E2=='1') && ($rows->S25_E2+$rows->S27_E2+$rows->S28_E2+$rows->S29_E2 > '1')){
+                    if (($rows->S28_E2+$rows->S29_E2=='2') && ($S28_E2>$S29_E2)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S28_E2','subject_code' => 'SCSJ3343','subject_long_name' => 'Software Quality Assurance','subject_type'=>'elective 2']);
+                    }
+                    else if (($rows->S28_E2+$rows->S25_E2=='2') && ($S28_E2>$S25_E2)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S28_E2','subject_code' => 'SCSJ3343','subject_long_name' => 'Software Quality Assurance','subject_type'=>'elective 2']);
+                    }
+                    else if (($rows->S28_E2+$rows->S27_E2=='2') && ($S28_E2>$S27_E2)) {
                         $subj = TemporarySubject::updateOrCreate(
                             ['subject_name' => 'S28_E2','subject_code' => 'SCSJ3343','subject_long_name' => 'Software Quality Assurance','subject_type'=>'elective 2']);
                     }
                 }
 
-                if (($rows->S29_E2=='1') && ($rows->S25_E2+$rows->S26_E2+$rows->S27_E2+$rows->S28_E2+$rows->S29_E2 > '1')){
-                    if ($S29_E2 > max($S25_E2,$S26_E2,$S27_E2,$S28_E2)) {
+                if (($rows->S29_E2=='1') && ($rows->S25_E2+$rows->S27_E2+$rows->S28_E2+$rows->S29_E2 > '1')){
+                    if (($rows->S29_E2+$rows->S25_E2=='2') && ($S29_E2>$S25_E2)) {
                         $subj = TemporarySubject::updateOrCreate(
                             ['subject_name' => 'S29_E2','subject_code' => 'SCSJ3603','subject_long_name' => 'Knowledge-Based & Expert System','subject_type'=>'elective 2']);
-
+                    }
+                    else if (($rows->S29_E2+$rows->S27_E2=='2') && ($S29_E2>$S27_E2)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S29_E2','subject_code' => 'SCSJ3603','subject_long_name' => 'Knowledge-Based & Expert System','subject_type'=>'elective 2']);
+                    }
+                    else if (($rows->S29_E2+$rows->S28_E2=='2') && ($S29_E2>$S28_E2)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S29_E2','subject_code' => 'SCSJ3603','subject_long_name' => 'Knowledge-Based & Expert System','subject_type'=>'elective 2']);
                     }
                 }
 
-                // remove constrain if the subject remaining is the only choice either (S30/S31/S32/S33)
-                if (($rows->S30_E3=='1') && ($rows->S30_E3+$rows->S31_E3+$rows->S32_E3+$rows->S33_E3 > '1')){
+                //special condition if all rows for E3 == 4 means the student didnt take any subject from E3 yet, the system will offer subject with greatest value
+                if ($rows->S30_E3+$rows->S31_E3+$rows->S32_E3+$rows->S33_E3 == '4') {
                     if ($S30_E3 > max($S31_E3,$S32_E3,$S33_E3)) {
                         $subj = TemporarySubject::updateOrCreate(
                             ['subject_name' => 'S30_E3','subject_code' => 'SCSJ3323','subject_long_name' => 'Software Design & Architecture','subject_type'=>'elective 3']);
                     }
-                    // elseif ($rows->S30_E3+$rows->S31_E3 == '2') {
-                    //     $subj = TemporarySubject::updateOrCreate(
-                    //         ['subject_name' => 'S30_E3','subject_code' => 'SCSJ3323','subject_long_name' => 'Software Design & Architecture','subject_type'=>'elective 3']);
-                    // }
-                }
-
-                if (($rows->S31_E3=='1') && ($rows->S30_E3+$rows->S31_E3+$rows->S32_E3+$rows->S33_E3 > '1')){
-                    if ($S31_E3 > max($S30_E3,$S32_E3,$S33_E3)) {
+                    else if ($S31_E3 > max($S30_E3,$S32_E3,$S33_E3)) {
                         $subj = TemporarySubject::updateOrCreate(
                             ['subject_name' => 'S31_E3','subject_code' => 'SCSJ3563','subject_long_name' => 'Computer Intelligence','subject_type'=>'elective 3']);
                     }
-                    // elseif ($rows->S31_E3+$rows->S32_E3 == '2') {
-                    //     $subj = TemporarySubject::updateOrCreate(
-                    //         ['subject_name' => 'S31_E3','subject_code' => 'SCSJ3563','subject_long_name' => 'Computer Intelligence','subject_type'=>'elective 3']);
-                    // }
-                }
-
-                if (($rows->S32_E3=='1') && ($rows->S30_E3+$rows->S31_E3+$rows->S32_E3+$rows->S33_E3 > '1')){
-                    if ($S32_E3 > max($S30_E3,$S31_E3,$S33_E3)) {
+                    else if ($S32_E3 > max($S30_E3,$S31_E3,$S33_E3)) {
                         $subj = TemporarySubject::updateOrCreate(
                             ['subject_name' => 'S32_E3','subject_code' => 'SCSJ3253','subject_long_name' => 'Programming Technique 3','subject_type'=>'elective 3']);
                     }
-                    // elseif ($rows->S32_E3+$rows->S33_E3 == '2') {
-                    //     $subj = TemporarySubject::updateOrCreate(
-                    //         ['subject_name' => 'S32_E3','subject_code' => 'SCSJ3253','subject_long_name' => 'Programming Technique 3','subject_type'=>'elective 3']);
-                    // }
-                }
-
-                if (($rows->S33_E3=='1') && ($rows->S30_E3+$rows->S31_E3+$rows->S32_E3+$rows->S33_E3 > '1')){
-                    if ($S33_E3 > max($S30_E3,$S31_E3,$S32_E3)) {
+                    else if ($S33_E3 > max($S30_E3,$S31_E3,$S32_E3)) {
                         $subj = TemporarySubject::updateOrCreate(
                             ['subject_name' => 'S33 _E3','subject_code' => 'SCSJ3403','subject_long_name' => 'Special Topic in Software Engineering','subject_type'=>'elective 3']);
                     }
                 }
 
+                // remove constrain if the subject remaining is the only choice either (S30/S31/S32/S33)
+                if (($rows->S30_E3=='1') && ($rows->S30_E3+$rows->S31_E3+$rows->S32_E3+$rows->S33_E3 > '1')){
+                    if (($rows->S30_E3+$rows->S31_E3=='2') && ($S30_E3>$S31_E3)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S30_E3','subject_code' => 'SCSJ3323','subject_long_name' => 'Software Design & Architecture','subject_type'=>'elective 3']);
+                    }
+                    else if (($rows->S30_E3+$rows->S32_E3=='2') && ($S30_E3>$S32_E3)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S30_E3','subject_code' => 'SCSJ3323','subject_long_name' => 'Software Design & Architecture','subject_type'=>'elective 3']);
+                    }
+                    else if (($rows->S30_E3+$rows->S33_E3=='2') && ($S30_E3>$S33_E3)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S30_E3','subject_code' => 'SCSJ3323','subject_long_name' => 'Software Design & Architecture','subject_type'=>'elective 3']);
+                    }
+                }
+
+                if (($rows->S31_E3=='1') && ($rows->S30_E3+$rows->S31_E3+$rows->S32_E3+$rows->S33_E3 > '1')){
+                    if (($rows->S31_E3+$rows->S32_E3=='2') && ($S31_E3>$S32_E3)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S31_E3','subject_code' => 'SCSJ3563','subject_long_name' => 'Computer Intelligence','subject_type'=>'elective 3']);
+                    }
+                    else if (($rows->S31_E3+$rows->S30_E3=='2') && ($S31_E3>$S30_E3)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S31_E3','subject_code' => 'SCSJ3563','subject_long_name' => 'Computer Intelligence','subject_type'=>'elective 3']);
+                    }
+                    else if (($rows->S31_E3+$rows->S33_E3=='2') && ($S31_E3>$S33_E3)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S31_E3','subject_code' => 'SCSJ3563','subject_long_name' => 'Computer Intelligence','subject_type'=>'elective 3']);
+                    }
+                }
+
+                if (($rows->S32_E3=='1') && ($rows->S30_E3+$rows->S31_E3+$rows->S32_E3+$rows->S33_E3 > '1')){
+                    if (($rows->S32_E3+$rows->S33_E3=='2') && ($S32_E3>$S33_E3)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S32_E3','subject_code' => 'SCSJ3253','subject_long_name' => 'Programming Technique 3','subject_type'=>'elective 3']);
+                    }
+                    else if (($rows->S32_E3+$rows->S30_E3=='2') && ($S32_E3>$S30_E3)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S32_E3','subject_code' => 'SCSJ3253','subject_long_name' => 'Programming Technique 3','subject_type'=>'elective 3']);
+                    }
+                    else if (($rows->S32_E3+$rows->S31_E3=='2') && ($S32_E3>$S31_E3)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S32_E3','subject_code' => 'SCSJ3253','subject_long_name' => 'Programming Technique 3','subject_type'=>'elective 3']);
+                    }
+                }
+
+                if (($rows->S33_E3=='1') && ($rows->S30_E3+$rows->S31_E3+$rows->S32_E3+$rows->S33_E3 > '1')){
+                    if (($rows->S33_E3+$rows->S30_E3=='2') && ($S33_E3>$S30_E3)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S33 _E3','subject_code' => 'SCSJ3403','subject_long_name' => 'Special Topic in Software Engineering','subject_type'=>'elective 3']);
+                    }
+                    else if (($rows->S33_E3+$rows->S31_E3=='2') && ($S33_E3>$S31_E3)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S33 _E3','subject_code' => 'SCSJ3403','subject_long_name' => 'Special Topic in Software Engineering','subject_type'=>'elective 3']);
+                    }
+                    if (($rows->S33_E3+$rows->S32_E3=='2') && ($S33_E3>$S32_E3)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S33 _E3','subject_code' => 'SCSJ3403','subject_long_name' => 'Special Topic in Software Engineering','subject_type'=>'elective 3']);
+                    }
+                }
+
+                //special condition if sum of E4 == '4'
+                if ($rows->S34_E4+$rows->S35_E4+$rows->S36_E4+$rows->S37_E4 =='4') {
+                    if ($S34_E4 > max($S35_E4,$S36_E4,$S37_E4)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S34_E4','subject_code' => 'SCSJ4383','subject_long_name' => 'Software Construction','subject_type'=>'elective 4']);
+                    }
+                    if ($S35_E4 > max($S34_E4,$S36_E4,$S37_E4)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S35_E4','subject_code' => 'SCSJ4423','subject_long_name' => 'Real-Time Software Engineering','subject_type'=>'elective 4']);
+                    }
+                    if ($S36_E4 > max($S34_E4,$S35_E4,$S37_E4)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S36_E4','subject_code' => 'SCSJ4483','subject_long_name' => 'Web Technology','subject_type'=>'elective 4']);
+                    }
+                    if ($S37_E4 > max($S34_E4,$S35_E4,$S36_E4)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S37_E4','subject_code' => 'SCSJ4463','subject_long_name' => 'Agent-Oriented Software Engineering','subject_type'=>'elective 4']);
+                    }
+                }
                 //remove constrain if the subject remaining is the only choice either (S34/S35/S36/S37)
                 if (($rows->S34_E4=='1') && ($rows->S34_E4+$rows->S35_E4+$rows->S36_E4+$rows->S37_E4 > '1')){
-                    if ($S34_E4 > max($S35_E4,$S36_E4,$S37_E4)) {
+                    if (($rows->S34_E4+$rows->S35_E4=='2') && ($S34_E4>$S35_E4)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S34_E4','subject_code' => 'SCSJ4383','subject_long_name' => 'Software Construction','subject_type'=>'elective 4']);
+                    }
+                    else if (($rows->S34_E4+$rows->S36_E4=='2') && ($S34_E4>$S36_E4)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S34_E4','subject_code' => 'SCSJ4383','subject_long_name' => 'Software Construction','subject_type'=>'elective 4']);
+                    }
+                    else if (($rows->S34_E4+$rows->S37_E4=='2') && ($S34_E4>$S37_E4)) {
                         $subj = TemporarySubject::updateOrCreate(
                             ['subject_name' => 'S34_E4','subject_code' => 'SCSJ4383','subject_long_name' => 'Software Construction','subject_type'=>'elective 4']);
                     }
                 }
 
                 if (($rows->S35_E4=='1') && ($rows->S34_E4+$rows->S35_E4+$rows->S36_E4+$rows->S37_E4 > '1')){
-                    if ($S35_E4 > max($S34_E4,$S36_E4,$S37_E4)) {
+                    if (($rows->S35_E4+$rows->S36_E4=='2') && ($S35_E4>$S36_E4)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S35_E4','subject_code' => 'SCSJ4423','subject_long_name' => 'Real-Time Software Engineering','subject_type'=>'elective 4']);
+                    }
+                    else if (($rows->S35_E4+$rows->S37_E4=='2') && ($S35_E4>$S37_E4)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S35_E4','subject_code' => 'SCSJ4423','subject_long_name' => 'Real-Time Software Engineering','subject_type'=>'elective 4']);
+                    }
+                    else if (($rows->S35_E4+$rows->S34_E4=='2') && ($S35_E4>$S34_E4)) {
                         $subj = TemporarySubject::updateOrCreate(
                             ['subject_name' => 'S35_E4','subject_code' => 'SCSJ4423','subject_long_name' => 'Real-Time Software Engineering','subject_type'=>'elective 4']);
                     }
                 }
 
                 if (($rows->S36_E4=='1') && ($rows->S34_E4+$rows->S35_E4+$rows->S36_E4+$rows->S37_E4 > '1')){
-                    if ($S36_E4 > max($S34_E4,$S35_E4,$S37_E4)) {
+                    if (($rows->S36_E4+$rows->S37_E4=='2') && ($S36_E4>$S37_E4)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S36_E4','subject_code' => 'SCSJ4483','subject_long_name' => 'Web Technology','subject_type'=>'elective 4']);
+                    }
+                    else if (($rows->S36_E4+$rows->S34_E4=='2') && ($S36_E4>$S34_E4)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S36_E4','subject_code' => 'SCSJ4483','subject_long_name' => 'Web Technology','subject_type'=>'elective 4']);
+                    }
+                    else if (($rows->S36_E4+$rows->S35_E4=='2') && ($S36_E4>$S35_E4)) {
                         $subj = TemporarySubject::updateOrCreate(
                             ['subject_name' => 'S36_E4','subject_code' => 'SCSJ4483','subject_long_name' => 'Web Technology','subject_type'=>'elective 4']);
                     }
                 }
 
                 if (($rows->S37_E4=='1') && ($rows->S34_E4+$rows->S35_E4+$rows->S36_E4+$rows->S37_E4 > '1')){
-                    if ($S37_E4 > max($S34_E4,$S35_E4,$S36_E4)) {
+                    if (($rows->S37_E4+$rows->S34_E4=='2') && ($S37_E4>$S34_E4)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S37_E4','subject_code' => 'SCSJ4463','subject_long_name' => 'Agent-Oriented Software Engineering','subject_type'=>'elective 4']);
+                    }
+                    else if (($rows->S37_E4+$rows->S35_E4=='2') && ($S37_E4>$S35_E4)) {
+                        $subj = TemporarySubject::updateOrCreate(
+                            ['subject_name' => 'S37_E4','subject_code' => 'SCSJ4463','subject_long_name' => 'Agent-Oriented Software Engineering','subject_type'=>'elective 4']);
+                    }
+                    else if (($rows->S37_E4+$rows->S36_E4=='2') && ($S37_E4>$S36_E4)) {
                         $subj = TemporarySubject::updateOrCreate(
                             ['subject_name' => 'S37_E4','subject_code' => 'SCSJ4463','subject_long_name' => 'Agent-Oriented Software Engineering','subject_type'=>'elective 4']);
                     }
@@ -263,71 +400,9 @@ class TemporaryController extends Controller{
                         $subj = TemporarySubject::updateOrCreate(
                             ['subject_name' => 'S21','subject_code' => 'SCSJ4134','subject_long_name' => 'Software Engineering Project 2','subject_type'=>'compulsory']);
                     }
-                }
-                // check if all elective <=3 offer the elective
-                if ($rows->S23_E1+$rows->S24_E1+$rows->S25_E2+$rows->S26_E2+$rows->S27_E2+$rows->S28_E2+$rows->S29_E2+$rows->S30_E3+$rows->S31_E3+$rows->S32_E3+$rows->S33_E3+$rows->S34_E4+$rows->S35_E4+$rows->S36_E4+$rows->S37_E4 < '4'){
-                    if ($rows->S25_E2=='1'){
+                    if ($rows->S26_E2=='1') {
                         $subj = TemporarySubject::updateOrCreate(
-                            ['subject_name' => 'S25_E2','subject_code' => 'SCSJ3553','subject_long_name' => 'Artificial Intelligent','subject_type'=>'elective 2']);
-                    }
-                    if ($rows->S26_E2=='1'){
-                            $subj = TemporarySubject::updateOrCreate(
-                                ['subject_name' => 'S26_E2','subject_code' => 'SCSJ3104','subject_long_name' => 'Application Development','subject_type'=>'elective 2']);
-                    }
-
-                    if ($rows->S27_E2=='1'){
-                        $subj = TemporarySubject::updateOrCreate(
-                            ['subject_name' => 'S27_E2','subject_code' => 'SCSJ3303','subject_long_name' => 'Internet Programming','subject_type'=>'elective 2']);
-                    }
-
-                    if ($rows->S28_E2=='1'){
-                        $subj = TemporarySubject::updateOrCreate(
-                            ['subject_name' => 'S28_E2','subject_code' => 'SCSJ3343','subject_long_name' => 'Software Quality Assurance','subject_type'=>'elective 2']);
-                    }
-
-                    if ($rows->S29_E2=='1'){
-                        $subj = TemporarySubject::updateOrCreate(
-                            ['subject_name' => 'S29_E2','subject_code' => 'SCSJ3603','subject_long_name' => 'Knowledge-Based & Expert System','subject_type'=>'elective 2']);
-                    }
-
-                    if ($rows->S30_E3=='1'){
-                        $subj = TemporarySubject::updateOrCreate(
-                            ['subject_name' => 'S30_E3','subject_code' => 'SCSJ3323','subject_long_name' => 'Software Design & Architecture','subject_type'=>'elective 3']);
-                    }
-
-                    if ($rows->S31_E3=='1'){
-                        $subj = TemporarySubject::updateOrCreate(
-                            ['subject_name' => 'S31_E3','subject_code' => 'SCSJ3563','subject_long_name' => 'Computer Intelligence','subject_type'=>'elective 3']);
-                    }
-
-                    if ($rows->S32_E3=='1'){
-                        $subj = TemporarySubject::updateOrCreate(
-                            ['subject_name' => 'S32_E3','subject_code' => 'SCSJ3253','subject_long_name' => 'Programming Technique 3','subject_type'=>'elective 3']);
-                    }
-
-                    if ($rows->S33_E3=='1'){
-                        $subj = TemporarySubject::updateOrCreate(
-                            ['subject_name' => 'S33 _E3','subject_code' => 'SCSJ3403','subject_long_name' => 'Special Topic in Software Engineering','subject_type'=>'elective 3']);
-                    }
-
-                    if ($rows->S34_E4=='1'){
-                        $subj = TemporarySubject::updateOrCreate(
-                            ['subject_name' => 'S34_E4','subject_code' => 'SCSJ4383','subject_long_name' => 'Software Construction','subject_type'=>'elective 4']);
-                    }
-
-                    if ($rows->S35_E4=='1') {
-                        $subj = TemporarySubject::updateOrCreate(
-                            ['subject_name' => 'S35_E4','subject_code' => 'SCSJ4423','subject_long_name' => 'Real-Time Software Engineering','subject_type'=>'elective 4']);
-                    }
-
-                    if ($rows->S36_E4=='1'){
-                        $subj = TemporarySubject::updateOrCreate(
-                            ['subject_name' => 'S36_E4','subject_code' => 'SCSJ4483','subject_long_name' => 'Web Technology','subject_type'=>'elective 4']);
-                    }
-
-                    if ($rows->S37_E4=='1'){
-                        $subj = TemporarySubject::updateOrCreate(
-                            ['subject_name' => 'S37_E4','subject_code' => 'SCSJ4463','subject_long_name' => 'Agent-Oriented Software Engineering','subject_type'=>'elective 4']);
+                            ['subject_name' => 'S26','subject_code' => 'SCSJ3104','subject_long_name' => 'Application Development','subject_type'=>'compulsory']);
                     }
                 }
             }

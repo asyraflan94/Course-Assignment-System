@@ -16,6 +16,7 @@
                     <table class="table table-bordered data-table">
                         <thead>
                             <tr>
+                                <th>No.</th>
                                 <th>MATRIX NO.</th>
                                 <th>NAME</th>
                                 <th>TEKNOLOGI DAN SISTEM MAKLUMAT</th>
@@ -58,8 +59,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($scsj as $student)
+                            @foreach ($scsj as $index => $student)
                             <tr class="gradeX">
+                                <td style="text-align:center">{{$index+1}}</td>
                                 <td>{{$student->matrix_no}}</td>
                                 <td>{{$student->student_name}}</td>
                                 <td style="text-align:center">{{$student->S1}}</td>

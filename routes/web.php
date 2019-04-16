@@ -20,20 +20,30 @@ Route::match(['get','post'],'/admin','AdminController@login');
 Auth::routes();
 
 Route::group(['middleware' => ['auth']], function(){
+
+    //AdminController
     Route::get('/admin/dashboard', 'AdminController@dashboard');
     Route::get('/admin/setting', 'AdminController@setting');
     Route::get('/admin/check-pswd','AdminController@checkPassword');
     Route::match(['get','post'],'/admin/update-pswd','AdminController@updatePassword');
+
+    //ScsjController
     Route::get('/admin/scsj','ScsjController@showStudent');
+
+    //SubjectController
     Route::get('/admin/list-of-subject','SubjectController@showSubjectList');
     Route::get('/admin/show-matrix','SubjectController@showMatrix');
     Route::get('/admin/final-year-list','SubjectController@showFinalYear');
-    //Route::get('/admin/final-year-subject-list','SubjectController@showSubjectListFinalYear');
-    Route::get('/admin/elective-course','TemporaryController@electiveGroup');
+    Route::get('/admin/general-subject','SubjectController@generalSubject');
+    Route::get('/admin/suggested-general-subject','SubjectController@generatedSubject');
 
+
+    //TemporaryController
+    Route::get('/admin/generate-subject','TemporaryController@generateSubject');
+
+    //StudentController
     //route for each student detail
     Route::get('/admin/student/{id}','StudentController@showStudent');
-
 
     //route for each subject
     Route::get('/admin/system-analysis-and-design','SubjectController@AnalisadanRekabentukSistem');

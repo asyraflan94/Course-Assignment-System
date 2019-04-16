@@ -38,7 +38,7 @@
                         <tbody>
                             @foreach ($subject as $index => $stud)
                             <tr class="gradeX">
-                                <td style="text-align:center">{{$index +}}</td>
+                                <td style="text-align:center">{{$index +1}}</td>
                                 <td><a href="{{url('/admin/student/'.$stud->id)}}" target="_blank">{{$stud->student_name}}</td>
                                 <td>{{$stud->matrix_no}}</td>
                             </tr>
