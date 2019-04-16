@@ -852,20 +852,29 @@ CREATE TABLE IF NOT EXISTS `temporary_subjects` (
   `subject_name` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   `subject_long_name` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   `subject_code` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
+  `subject_type` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table psm.temporary_subjects: ~8 rows (approximately)
+-- Dumping data for table psm.temporary_subjects: ~0 rows (approximately)
 /*!40000 ALTER TABLE `temporary_subjects` DISABLE KEYS */;
-INSERT IGNORE INTO `temporary_subjects` (`id`, `subject_name`, `subject_long_name`, `subject_code`) VALUES
-	(1, 'S31_E3', 'Computer Intelligence', 'SCSJ3563'),
-	(2, 'S32_E3', 'Programming Technique 3', 'SCSJ3253'),
-	(3, 'S30_E3', 'Software Design & Architecture', 'SCSJ3323'),
-	(4, 'S33_E3', 'Special Topic in Software Engineering', 'SCSJ3403'),
-	(5, 'S33 _E3', 'Special Topic in Software Engineering', 'SCSJ3403'),
-	(6, 'S36_E4', 'Web Technology', 'SCSJ4483'),
-	(7, 'S37_E4', 'Agent-Oriented Software Engineering', 'SCSJ4463'),
-	(8, 'S35_E4', 'Real-Time Software Engineering', 'SCSJ4423');
+INSERT IGNORE INTO `temporary_subjects` (`id`, `subject_name`, `subject_long_name`, `subject_code`, `subject_type`) VALUES
+	(1, 'S20', 'Software Engineering Project 1', 'SCSJ3032', 'compulsory'),
+	(2, 'S31_E3', 'Computer Intelligence', 'SCSJ3563', 'elective 3'),
+	(3, 'S36_E4', 'Web Technology', 'SCSJ4483', 'elective 4'),
+	(4, 'S21', 'Software Engineering Project 2', 'SCSJ4134', 'compulsory'),
+	(5, 'S8', 'Web Programming', 'SCSV1223', 'compulsory'),
+	(6, 'S9', 'Database', 'SCSD2523', 'compulsory'),
+	(7, 'S18', 'Theory of Computer Science', 'SCSJ3203', 'compulsory'),
+	(8, 'S23_E1', 'Requirement Engineering & Software Modelling', 'SCSJ2253', 'elective 1'),
+	(9, 'S14', 'Probability & Statistical Data Analysis', 'SCSI2143', 'compulsory'),
+	(10, 'S17', 'Operating System', 'SCSR2043', 'compulsory'),
+	(11, 'S19', 'Technopreneurship and Seminar', 'UCSD2762', 'compulsory'),
+	(12, 'S26', 'Application Development', 'SCSJ3104', 'compulsory'),
+	(13, 'S11', 'System Analysis and Design', 'SCSD2613', 'compulsory'),
+	(14, 'S13', 'Human Computer Interaction', 'SCSV2113', 'compulsory'),
+	(15, 'S37_E4', 'Agent-Oriented Software Engineering', 'SCSJ4463', 'elective 4'),
+	(16, 'S32_E3', 'Programming Technique 3', 'SCSJ3253', 'elective 3');
 /*!40000 ALTER TABLE `temporary_subjects` ENABLE KEYS */;
 
 -- Dumping structure for table psm.users
