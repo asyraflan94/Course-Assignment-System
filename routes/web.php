@@ -35,7 +35,7 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/admin/show-matrix','SubjectController@showMatrix');
     Route::get('/admin/final-year-list','SubjectController@showFinalYear');
     Route::get('/admin/general-subject','SubjectController@generalSubject');
-    Route::get('/admin/suggested-general-subject','SubjectController@generatedSubject');
+    Route::get('/admin/generated-subject','SubjectController@generatedSubject');
 
 
     //TemporaryController

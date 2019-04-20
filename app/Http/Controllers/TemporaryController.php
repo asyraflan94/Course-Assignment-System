@@ -34,28 +34,6 @@ class TemporaryController extends Controller{
             ['total_subject_left', '<', '10']
             ])->get();
 
-        // $fy = Matrix::get();
-
-        //  //elective E2
-        //  $S25_E2 = Matrix::sum('S25_E2');
-        //  $S26_E2 = Matrix::sum('S26_E2');
-        //  $S27_E2 = Matrix::sum('S27_E2');
-        //  $S28_E2 = Matrix::sum('S28_E2');
-        //  $S29_E2 = Matrix::sum('S29_E2');
-
-        //  //elective E3
-        //  $S30_E3 = Matrix::sum('S30_E3');
-        //  $S31_E3 = Matrix::sum('S31_E3');
-        //  $S32_E3 = Matrix::sum('S32_E3');
-        //  $S33_E3 = Matrix::sum('S33_E3');
-
-        //  //elective E4
-        //  $S34_E4 = Matrix::sum('S34_E4');
-        //  $S35_E4 = Matrix::sum('S35_E4');
-        //  $S36_E4 = Matrix::sum('S36_E4');
-        //  $S37_E4 = Matrix::sum('S37_E4');
-
-
             foreach ($fy as $rows) {
 
                  // remove constrain if the subject remaining is the only choice either (S22/S23)
@@ -64,11 +42,6 @@ class TemporaryController extends Controller{
                     $subj = TemporarySubject::updateOrCreate(
                         ['subject_name' => 'S23_E1','subject_code' => 'SCSJ2253','subject_long_name' => 'Requirement Engineering & Software Modelling','subject_type'=>'elective 1']);
                 }
-
-                // if (($rows->S24_E1=='1') && ($rows->S24_E1+$rows->S23_E1 > '1')){
-                //     $subj = TemporarySubject::updateOrCreate(
-                //         ['subject_name' => 'S24_E1','subject_code' => 'SCSJ2363','subject_long_name' => 'Software Project Management']);
-                // }
 
                 // remove constrain if the subject remaining is the only choice either (S25/S26/S27/S28/S29)
 
@@ -406,7 +379,7 @@ class TemporaryController extends Controller{
                     }
                 }
             }
-        //return view('offer subject')->with(compact('subj'));
+        return redirect('admin/generated-subject');
     }
 }
 

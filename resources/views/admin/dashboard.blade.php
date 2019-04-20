@@ -10,7 +10,7 @@
     <!--End-breadcrumbs-->
 
     <!--Action boxes-->
-      <div class="container-fluid">
+    <div class="container-fluid">
         <div class="quick-actions_homepage">
           <ul class="quick-actions">
             <li class="bg_lg span3"> <a href="{{url('/admin/scsj')}}"> <i class="icon-group"></i>Software Engineering</a></li>
@@ -18,11 +18,12 @@
             <li class="bg_lo span3"> <a href="{{url('/admin/scsv')}}"> <i class="icon-group"></i>Computer Graphic</a></li>
           </ul>
         </div>
-    <!--End-Action boxes-->
+
+        <!--End-Action boxes-->
 
     <div class="row-fluid">
         <div class="row-fluid">
-            <div class="widget-box">
+            {{-- <div class="widget-box">
                 <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
                     <h5>Final Year Subject List</h5>
                 </div>
@@ -296,7 +297,8 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
+            </div> --}}
+            <a class="btn btn-danger btn-large" role="button" style="margin-top:20%;margin-left:30%;;margin-right:30%;display:block" href="{{url('/admin/generate-subject')}}"><i class="icon-retweet"></i> Generate Subjects Offering List</a>
         </div>
     </div>
 
