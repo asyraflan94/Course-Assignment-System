@@ -58,6 +58,8 @@ class SubjectController extends Controller
     }
 
     public function showMatrix(){
+        set_time_limit(0);
+
 
         $vars = Matrix::get();
         foreach($vars as $row){
