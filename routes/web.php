@@ -28,9 +28,7 @@ Route::group(['middleware' => ['auth']], function(){
     Route::match(['get','post'],'/admin/update-pswd','AdminController@updatePassword');
 
     //excel
-    Route::get('export', 'MyController@export')->name('export');
-    Route::get('importExportView', 'MyController@importExportView');
-    Route::post('import', 'MyController@import')->name('import');
+    Route::post('import', 'ExcelController@import')->name('import');
 
     //ScsjController
     Route::get('/admin/scsj','ScsjController@showStudent');
@@ -40,7 +38,6 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/admin/list-of-subject','SubjectController@showSubjectList');
     Route::get('/admin/show-matrix','SubjectController@showMatrix');
     Route::get('/admin/final-year-list','SubjectController@showFinalYear');
-    Route::get('/admin/general-subject','SubjectController@generalSubject');
     Route::get('/admin/generated-subject','SubjectController@generatedSubject');
 
     //TemporaryController

@@ -3,14 +3,13 @@
 
     <div id="content">
         <div id="content-header">
-        <div id="breadcrumb"> <a href="{{url('/admin/dashboard')}}" title="Go to Dashboard" class="tip-bottom"><i class="icon-home"></i> Dashboard</a><a href="" class="current">List of subjects</a> </div>
-            <h1>Subjects List</h1>
+            <div id="breadcrumb"> <a href="{{url('/admin/dashboard')}}" title="Go to Dashboard" class="tip-bottom"><i class="icon-home"></i> Dashboard</a><a href="" class="current">List of subjects</a> </div>
         </div>
         <div class="container-fluid"><hr>
         <div class="row-fluid">
             <div class="widget-box">
                 <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
-                    <h5>Software Engineering Subject List</h5>
+                    <h5>Subjects List</h5>
                 </div>
                 <div class="widget-content nopadding">
                     <table class="table table-bordered data-table">

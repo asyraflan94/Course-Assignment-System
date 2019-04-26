@@ -9,17 +9,6 @@
     </div>
     <!--End-breadcrumbs-->
 
-    <!--Action boxes-->
-      {{-- <div class="container-fluid">
-        <div class="quick-actions_homepage">
-          <ul class="quick-actions">
-            <li class="bg_lg span3"> <a href="{{url('/admin/scsj')}}"> <i class="icon-group"></i>Software Engineering</a></li>
-            <li class="bg_ly span3"> <a href="{{url('/admin/scsr')}}"> <i class="icon-group"></i>Computer Network</a></li>
-            <li class="bg_lo span3"> <a href="{{url('/admin/scsv')}}"> <i class="icon-group"></i>Computer Graphic</a></li>
-          </ul>
-        </div> --}}
-    <!--End-Action boxes-->
-
     <div class="row-fluid">
         <div class="row-fluid">
             <div class="widget-box">

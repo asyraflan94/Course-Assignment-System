@@ -5,7 +5,7 @@
 <div id="content">
     <!--breadcrumbs-->
       <div id="content-header">
-        <div id="breadcrumb"> <a href="{{url('/admin/dashboard')}}" title="Go to Dashboard" class="tip-bottom"><i class="icon-home"></i> Dashboard</a><a href="" class="current">Kepintaran Buatan</a> </div>
+        <div id="breadcrumb"> <a href="{{url('/admin/dashboard')}}" title="Go to Dashboard" class="tip-bottom"><i class="icon-home"></i> Dashboard</a><a href="" class="current">Artificial Intelligent</a> </div>
     </div>
     <!--End-breadcrumbs-->
 
@@ -24,7 +24,7 @@
         <div class="row-fluid">
             <div class="widget-box">
                 <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
-                    <h5>Kepintaran Buatan</h5>
+                    <h5>Artificial Intelligent</h5>
                 </div>
                 <div class="widget-content nopadding">
                     <table class="table table-bordered data-table">

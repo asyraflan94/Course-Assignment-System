@@ -11,6 +11,368 @@ class TemporaryController extends Controller{
     //remove constraints
     public function generateSubject(){
 
+        set_time_limit(0);
+
+
+        $vars = Matrix::get();
+        foreach($vars as $row){
+            //s1
+            if($row->S1 == 'TC' || $row->S1 == 'Y' || $row->S1 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S1='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S1 = '1';
+
+            }
+            //s2
+            if($row->S2 == 'TC' || $row->S2 == 'Y' || $row->S2 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S2='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S2 = '1';
+
+            }
+            //s3
+            if($row->S3 == 'TC' || $row->S3 == 'Y' || $row->S3 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S3='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S3 = '1';
+
+            }
+            //s4
+            if($row->S4 == 'TC' || $row->S4 == 'Y' || $row->S4 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S4='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S4 = '1';
+
+            }
+            //s5
+            if($row->S5 == 'TC' || $row->S5 == 'Y' || $row->S5 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S5='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S5 = '1';
+
+            }
+            //s6
+            if($row->S6 == 'TC' || $row->S6 == 'Y' || $row->S6 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S6='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S6 = '1';
+            }
+            //s7
+            if($row->S7 == 'TC' || $row->S7 == 'Y' || $row->S7 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S7='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S7 = '1';
+            }
+            //s7
+            if($row->S8 == 'TC' || $row->S8 == 'Y' || $row->S8 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S8='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S8 = '1';
+            }
+            //s8
+            if($row->S9 == 'TC' || $row->S9 == 'Y' || $row->S9 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S9='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S9 = '1';
+            }
+            //s9
+            if($row->S10 == 'TC' || $row->S10 == 'Y' || $row->S10 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S10='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S10 = '1';
+            }
+            //s10
+            if($row->S11 == 'TC' || $row->S11 == 'Y' || $row->S11 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S11='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S11 = '1';
+            }
+            //s11
+            if($row->S12 == 'TC' || $row->S12 == 'Y' || $row->S12 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S12='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S12 = '1';
+            }
+            //s12
+            if($row->S13 == 'TC' || $row->S13 == 'Y' || $row->S13 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S13='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S13 = '1';
+            }
+            //s13
+            if($row->S14 == 'TC' || $row->S14 == 'Y' || $row->S14 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S14='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S14 = '1';
+            }
+            //s14
+            if($row->S15 == 'TC' || $row->S15 == 'Y' || $row->S15 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S15='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S15 = '1';
+            }
+            //s15
+            if($row->S16 == 'TC' || $row->S16 == 'Y' || $row->S16 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S16='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S16 = '1';
+            }
+            //s16
+            if($row->S17 == 'TC' || $row->S17 == 'Y' || $row->S17 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S17='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S17 = '1';
+            }
+            //s17
+            if($row->S18 == 'TC' || $row->S18 == 'Y' || $row->S18 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S18='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S18 = '1';
+            }
+            //s18
+            if($row->S19 == 'TC' || $row->S19 == 'Y' || $row->S19 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S19='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S19 = '1';
+            }
+            //s19
+            if($row->S20 == 'TC' || $row->S20 == 'Y' || $row->S20 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S20='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S20 = '1';
+            }
+            //s20
+            if($row->S21 == 'TC' || $row->S21 == 'Y' || $row->S21 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S21='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S21 = '1';
+            }
+            //s21
+            if($row->S22_E1 == 'TC' || $row->S22_E1 == 'Y' || $row->S22_E1 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S22_E1='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S22_E1 = '1';
+            }
+            if($row->S23_E1 == 'TC' || $row->S23_E1 == 'Y' || $row->S23_E1 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S23_E1='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S23_E1 = '1';
+            }
+            //s22
+            if($row->S24_E1 == 'TC' || $row->S24_E1 == 'Y' || $row->S24_E1 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S24_E1='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S24_E1 = '1';
+            }
+            if($row->kejuruteraan_keperluan == 'TC' || $row->kejuruteraan_keperluan == 'Y' || $row->kejuruteraan_keperluan == '0'){
+                $save = Matrix::find($row->id);
+                $save->kejuruteraan_keperluan='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S25_E2 = '1';
+            }
+            //s23
+            if($row->S25_E2 == 'TC' || $row->S25_E2 == 'Y' || $row->S25_E2 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S25_E2='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S25_E2 = '1';
+            }
+            //s24
+            if($row->S26_E2 == 'TC' || $row->S26_E2 == 'Y' || $row->S26_E2 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S26_E2='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S26_E2 = '1';
+            }
+            //s25
+            if($row->S27_E2 == 'TC' || $row->S27_E2 == 'Y' || $row->S27_E2 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S27_E2='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S27_E2 = '1';
+            }
+            //s26
+            if($row->S28_E2 == 'TC' || $row->S28_E2 == 'Y' || $row->S28_E2 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S28_E2='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S28_E2 = '1';
+            }
+            //s27
+            if($row->S29_E2 == 'TC' || $row->S29_E2 == 'Y' || $row->S29_E2 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S29_E2='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S29_E2 = '1';
+            }
+            //s28
+            if($row->S30_E3 == 'TC' || $row->S30_E3 == 'Y' || $row->S30_E3 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S30_E3='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S30_E3 = '1';
+            }
+
+            if($row->S31_E3 == 'TC' || $row->S31_E3 == 'Y' || $row->S31_E3 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S31_E3='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S31_E3 = '1';
+            }
+
+            if($row->S32_E3 == 'TC' || $row->S32_E3 == 'Y' || $row->S32_E3 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S32_E3='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S32_E3 = '1';
+            }
+
+            if($row->S33_E3 == 'TC' || $row->S33_E3 == 'Y' || $row->S33_E3 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S33_E3='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S33_E3 = '1';
+            }
+
+            if($row->S34_E4 == 'TC' || $row->S34_E4 == 'Y' || $row->S34_E4 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S34_E4='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S34_E4 = '1';
+            }
+
+            if($row->S35_E4 == 'TC' || $row->S35_E4 == 'Y' || $row->S35_E4 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S35_E4='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S35_E4 = '1';
+            }
+
+            if($row->S36_E4 == 'TC' || $row->S36_E4 == 'Y' || $row->S36_E4 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S36_E4='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S36_E4 = '1';
+            }
+
+            if($row->S37_E4 == 'TC' || $row->S37_E4 == 'Y' || $row->S37_E4 == '0'){
+                $save = Matrix::find($row->id);
+                $save->S37_E4='0';
+                $save->save();
+            } else{
+                $save = Matrix::find($row->id);
+                $save->S37_E4 = '1';
+            }
+
+        }
+        //     // code to save the total subject left inside the database
+            \DB::table('matrices')->update([
+            'total_subject_left' => \DB::raw('S1+S2+S3+S4+S5+S6+ S7+S8+S9+S10
+            +S11+S12+S13+ S14+S15
+            +S16+S17+S18+ S19+S20+S21+S22_E1+S23_E1+S24_E1
+            +S25_E2+S26_E2+S27_E2+S28_E2+S29_E2+S30_E3
+            +S31_E3+S32_E3+ S33_E3+ S34_E4+ S35_E4+S36_E4+ S37_E4')
+        ]);
+
+
         //elective E2
         $S25_E2 = Matrix::where('total_subject_left','<',10)->sum('S25_E2');
         $S26_E2 = Matrix::where('total_subject_left','<',10)->sum('S26_E2');
@@ -514,6 +876,7 @@ class TemporaryController extends Controller{
                     }
                 }
             }
+
         return redirect('admin/generated-subject')->with(compact('S34_E4','S35_E4','S36_E4','S37_E4'));
     }
 }

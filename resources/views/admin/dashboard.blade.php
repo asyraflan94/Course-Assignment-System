@@ -6,302 +6,140 @@
     <!--breadcrumbs-->
       <div id="content-header">
         <div id="breadcrumb"> <a href="{{url('/admin/dashboard')}}" title="Go to Dashboard" class="tip-bottom"><i class="icon-home"></i> Dashboard</a></div>
+        @if(Session::has('flash_message_success'))
+            <div id="alertThis" class="alert alert-success alert-block">
+                <button type="button" class="close" data-dismiss="alert">x</button>
+                <strong>{!! session('flash_message_success')!!}</strong>
+            </div>
+        @elseif(Session::has('flash_message_error'))
+            <div id='alertThis' class="alert alert-error alert-block">
+                <button type="button" class="close" data-dismiss="alert">x</button>
+                <strong>{!! session('flash_message_error')!!}</strong>
+            </div>
+        @endif
       </div>
     <!--End-breadcrumbs-->
 
     <!--Action boxes-->
     <div class="container-fluid">
-        <div class="quick-actions_homepage">
-          <ul class="quick-actions">
-            <li class="bg_lg span3"> <a href="{{url('/admin/scsj')}}"> <i class="icon-group"></i>Software Engineering</a></li>
-            <li class="bg_ly span3"> <a href="{{url('/admin/scsr')}}"> <i class="icon-group"></i>Computer Network</a></li>
-            <li class="bg_lo span3"> <a href="{{url('/admin/scsv')}}"> <i class="icon-group"></i>Computer Graphic</a></li>
-          </ul>
-        </div>
-
-        <!--End-Action boxes-->
-
     <div class="row-fluid">
-        <div class="row-fluid">
-            {{-- <div class="widget-box">
-                <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
-                    <h5>Final Year Subject List</h5>
-                </div>
-                <div class="widget-content nopadding">
-                    <table class="table table-bordered data-table">
-                        <thead>
-                            <tr>
-                                <th>Subject name</th>
-                                <th>No. of students</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @if($t1>0)
-                            <tr class="gradeX">
-                                <td><a href="{{url('/admin/technology-and-information-system')}}" target="_blank">Technology & Information System</td>
-                                <td style="text-align:center">{{ $t1 }}</td>
-                            </tr>
-                            @endif
-                            @if($t2>0)
-                            <tr class="gradeX">
-                                <td><a href="{{url('/admin/discrete-structure')}}" target="_blank">Discrete Structure</td>
-                                <td style="text-align:center">{{ $t2 }}</td>
-                            </tr>
-                            @endif
-                            @if($t3>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/programming-technique-1')}}" target="_blank">Programming Technique 1</td>
-                                <td style="text-align:center">{{ $t3 }}</td>
-                            </tr>
-                            @endif
-                            @if($t4>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/digital-logic')}}" target="_blank">Digital Logic</td>
-                                <td style="text-align:center">{{ $t4 }}</td>
-                            </tr>
-                            @endif
-                            @if($t5>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/computational-mathematic')}}" target="_blank">Computational Mathematics</td>
-                                <td style="text-align:center">{{ $t5 }}</td>
-                            </tr>
-                            @endif
-                            @if($t6>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/programming-technique-2')}}" target="_blank">Programming Technique 2</td>
-                                <td style="text-align:center">{{ $t6 }}</td>
-                            </tr>
-                            @endif
-                            @if($t7>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/network-communication')}}" target="_blank">Network Communication</td>
-                                <td style="text-align:center"d>{{ $t7 }}</td>
-                            </tr>
-                            @endif
-                            @if($t8>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/web-programming')}}" target="_blank">Web Programming</td>
-                                <td style="text-align:center">{{ $t8 }}</td>
-                            </tr>
-                            @endif
-                            @if($t9>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/database')}}" target="_blank">Database</td>
-                                <td style="text-align:center">{{ $t9 }}</td>
-                            </tr>
-                            @endif
-                            @if($t10>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/data-structures-and-algorithm')}}" target="_blank">Data Structures and Algorithm</td>
-                                <td style="text-align:center">{{ $t10 }}</td>
-                            </tr>
-                            @endif
-                            @if($t11>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/system-analysis-and-design')}}" target="_blank">System Analysis and Design</td>
-                                <td style="text-align:center">{{ $t11 }}</td>
-                            </tr>
-                            @endif
-                            @if($t12>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/computer-organisation-and-architecture')}}" target="_blank">Computer Organisation and Architecture</td>
-                                <td style="text-align:center">{{ $t12 }}</td>
-                            </tr>
-                            @endif
-                            @if($t13>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/human-computer-interaction')}}" target="_blank">Human Computer Interaction</td>
-                                <td style="text-align:center">{{ $t13 }}</td>
-                            </tr>
-                            @endif
-                            @if($t14>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/probability-and-statistical-data-analysis')}}" target="_blank">Probability & Statistical Data Analysis</td>
-                                <td style="text-align:center">{{ $t14 }}</td>
-                            </tr>
-                            @endif
-                            @if($t15>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/object-oriented-programming')}}" target="_blank">Object Oriented Programming</td>
-                                <td style="text-align:center">{{ $t15 }}</td>
-                            </tr>
-                            @endif
-                            @if($t16>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/software-engineering')}}" target="_blank">Software Engineering</td>
-                                <td style="text-align:center">{{ $t16 }}</td>
-                            </tr>
-                            @endif
-                            @if($t17>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/operating-system')}}" target="_blank">Operating Systems</td>
-                                <td style="text-align:center">{{ $t17 }}</td>
-                            </tr>
-                            @endif
-                            @if($t18>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/theory-of-computer-science')}}" target="_blank">Theory of Computer Science</td>
-                                <td style="text-align:center">{{ $t18 }}</td>
-                            </tr>
-                            @endif
-                            @if($t19>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/technopreneurship-and-seminar')}}" target="_blank">Technopreneurship and Seminar</td>
-                                <td style="text-align:center">{{ $t19 }}</td>
-                            </tr>
-                            @endif
-                            @if($t20>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/software-engineering-project-1')}}" target="_blank">Software Engineering Project 1</td>
-                                <td style="text-align:center">{{ $t20 }}</td>
-                            </tr>
-                            @endif
-                            @if($t21>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/software-engineering-project-2')}}" target="_blank">Software Engineering Project 2</td>
-                                <td style="text-align:center">{{ $t21 }}</td>
-                            </tr>
-                            @endif
-                            @if($t37>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/pengaturcaraan-pangkalan-data')}}" target="_blank">Pengaturcaraan Pangkalan Data</td>
-                                <td style="text-align:center">{{ $t37 }}</td>
-                            </tr>
-                            @endif
-                            @if($t22>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/requirement-engineering-and-software-modeling')}}" target="_blank">Requirement Engineering & Software Modeling</td>
-                                <td style="text-align:center">{{ $t22 }}</td>
-                            </tr>
-                            @endif
-                            @if($t23>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/software-project-management')}}" target="_blank">Software Project Management</td>
-                                <td style="text-align:center">{{ $t23 }}</td>
-                            </tr>
-                            @endif
-                            @if($t24>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/artificial-intelligent')}}" target="_blank">Artificial Intelligent</td>
-                                <td style="text-align:center">{{ $t24 }}</td>
-                            </tr>
-                            @endif
-                            @if($t25>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/application-development')}}" target="_blank">Application Development</td>
-                                <td style="text-align:center">{{ $t25 }}</td>
-                            </tr>
-                            @endif
-                            @if($t26>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/internet-programming')}}" target="_blank">Internet Programming</td>
-                                <td style="text-align:center">{{ $t26 }}</td>
-                            </tr>
-                            @endif
-                            @if($t27>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/software-quality-assurance')}}" target="_blank">Software Quality Assurance</td>
-                                <td style="text-align:center">{{ $t27 }}</td>
-                            </tr>
-                            @endif
-                            @if($t28>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/knowledge-based-and-expert-system')}}" target="_blank">Knowledge-based & Expert System</td>
-                                <td style="text-align:center">{{ $t28 }}</td>
-                            </tr>
-                            @endif
-                            @if($t29>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/software-design-and-architecture')}}" target="_blank">Software Design and Architecture</td>
-                                <td style="text-align:center">{{ $t29 }}</td>
-                            </tr>
-                            @endif
-                            @if($t30>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/computational-intelligence')}}" target="_blank">Computational Intelligence</td>
-                                <td style="text-align:center">{{ $t30 }}</td>
-                            </tr>
-                            @endif
-                            @if($t31>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/programming-technique-3')}}" target="_blank">Programming Technique 3</td>
-                                <td style="text-align:center">{{ $t31 }}</td>
-                            </tr>
-                            @endif
-                            @if($t32>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/special-topic-in-software-engineering')}}" target="_blank">Special Topic in Software Engineering</td>
-                                <td style="text-align:center">{{ $t32 }}</td>
-                            </tr>
-                            @endif
-                            @if($t33>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/software-construction')}}" target="_blank">Software Construction</td>
-                                <td style="text-align:center">{{ $t33 }}</td>
-                            </tr>
-                            @endif
-                            @if($t34>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/real-time-software-engineering')}}" target="_blank">Real-time Software Engineering</td>
-                                <td style="text-align:center">{{ $t34 }}</td>
-                            </tr>
-                            @endif
-                            @if($t35>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/web-technology')}}" target="_blank">Web Technology</td>
-                                <td style="text-align:center">{{ $t35 }}</td>
-                            </tr>
-                            @endif
-                            @if($t36>0)
-                            <tr class="gradeX">
-
-                                <td><a href="{{url('/admin/agent-oriented-software-engineering')}}" target="_blank">Agent-Oriented Software Engineering</td>
-                                <td style="text-align:center">{{ $t36 }}</td>
-                            </tr>
-                            @endif
-
-                        </tbody>
-                    </table>
-                </div>
-            </div> --}}
-            <a class="btn btn-danger btn-large" role="button" style="margin-top:20%;margin-left:30%;;margin-right:30%;display:block" href="{{url('/admin/generate-subject')}}"><i class="icon-retweet"></i> Generate Subjects Offering List</a>
+        <div class="card-body" align="center">
+            <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <input type="file" name="file" class="form-control"><br>
+                <button class="btn btn-success" style="margin-top:1%;height:30px;width:190px"><i class="icon-file"></i> Import Student Data</button>
+            </form>
+        </div>
+        <div class="row-fluid" align="center">
+            <a class="btn btn-danger" role="button" style="margin-top:1%" href="{{url('/admin/generate-subject')}}"><i class="icon-retweet"></i> Generate Offering List</a>
         </div>
     </div>
-
-    <!--end-main-container-part-->
-
+    <hr>
+    <div class="row-fluid">
+        <div class="widget-box">
+            <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
+                <h5>Student data</h5>
+            </div>
+            <div class="widget-content nopadding">
+                <table class="table table-bordered data-table">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>MATRIX NO.</th>
+                            <th>NAME</th>
+                            <th title="Technology & Information System">SCSD1513</th>
+                            <th title="Discrete Structure">SCSI1013</th>
+                            <th title="Programming Technique 1">SCSJ1013</th>
+                            <th title="Digital Logic">SCSR103</th>
+                            <th title="Computational Mathematics">SCSI1113</th>
+                            <th title="Programming Technique 2">SCSJ1023</th>
+                            <th title="Network Communication">SCSR1213</th>
+                            <th title="Web Programming">SCSV1223</th>
+                            <th title="Database">SCSD2523</th>
+                            <th title="Data Structures and Algorithm">SCSJ2013</th>
+                            <th title="System Analysis and Design">SCSD2613</th>
+                            <th title="Computer Organisation and Architecture">SCSR2033</th>
+                            <th title="Human Computer Interaction">SCSV2113</th>
+                            <th title="Probability & Statistical Data Analysis">SCSI2143</th>
+                            <th title="Object Oriented Programming">SCSJ2154</th>
+                            <th title="Software Engineering">SCSJ2203</th>
+                            <th title="Operating Systems">SCSR2043</th>
+                            <th title="Theory of Computer Science">SCSJ3203</th>
+                            <th title="Technopreneurship and Seminar">UCSD2762</th>
+                            <th title="Software Engineering Project 1">SCSJ3032</th>
+                            <th title="Software Engineering Project 2">SCSJ4134</th>
+                            <th title="Pengaturcaraan Pangkalan Data">SCSD2623</th>
+                            <th title="Requirement Engineering & Software Modeling">SCSJ2253</th>
+                            <th title="Software Project Management">SCSJ2363</th>
+                            <th title="Artificial Intelligent">SCSJ3553</th>
+                            <th title="Application Development">SCSJ3104</th>
+                            <th title="Internet Programming">SCSJ3303</th>
+                            <th title="Software Quality Assurance">SCSJ3343</th>
+                            <th title="Knowledge-based & Expert System">SCSJ3603</th>
+                            <th title="Software Design and Architecture">SCSJ3323</th>
+                            <th title="Computational Intelligence">SCSJ3563</th>
+                            <th title="Programming Technique 3">SCSJ3253</th>
+                            <th title="Special Topic in Software Engineering">SCSJ3403</th>
+                            <th title="Software Construction">SCSJ4383</th>
+                            <th title="Real-time Software Engineering">SCSJ4423</th>
+                            <th title="Web Technology">SCSJ4483</th>
+                            <th title="Agent-Oriented Software Engineering">SCSJ4463</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($students as $index => $student)
+                        <tr class="gradeX">
+                            <td style="text-align:center">{{$index+1}}</td>
+                            <td>{{$student->matrix_no}}</td>
+                            <td>{{$student->student_name}}</td>
+                            <td style="text-align:center">{{$student->S1}}</td>
+                            <td style="text-align:center">{{$student->S2}}</td>
+                            <td style="text-align:center">{{$student->S3}}</td>
+                            <td style="text-align:center">{{$student->S4}}</td>
+                            <td style="text-align:center">{{$student->S6}}</td>
+                            <td style="text-align:center">{{$student->S7}}</td>
+                            <td style="text-align:center">{{$student->S7}}</td>
+                            <td style="text-align:center">{{$student->S8}}</td>
+                            <td style="text-align:center">{{$student->S9}}</td>
+                            <td style="text-align:center">{{$student->S10}}</td>
+                            <td style="text-align:center">{{$student->S11}}</td>
+                            <td style="text-align:center">{{$student->S12}}</td>
+                            <td style="text-align:center">{{$student->S13}}</td>
+                            <td style="text-align:center">{{$student->S14}}</td>
+                            <td style="text-align:center">{{$student->S15}}</td>
+                            <td style="text-align:center">{{$student->S16}}</td>
+                            <td style="text-align:center">{{$student->S17}}</td>
+                            <td style="text-align:center">{{$student->S18}}</td>
+                            <td style="text-align:center">{{$student->S19}}</td>
+                            <td style="text-align:center">{{$student->S20}}</td>
+                            <td style="text-align:center">{{$student->S21}}</td>
+                            <td style="text-align:center">{{$student->S22_E1}}</td>
+                            <td style="text-align:center">{{$student->S23_E1}}</td>
+                            <td style="text-align:center">{{$student->S24_E1}}</td>
+                            <td style="text-align:center">{{$student->S25_E2}}</td>
+                            <td style="text-align:center">{{$student->S26_E2}}</td>
+                            <td style="text-align:center">{{$student->S27_E2}}</td>
+                            <td style="text-align:center">{{$student->S28_E2}}</td>
+                            <td style="text-align:center">{{$student->S29_E2}}</td>
+                            <td style="text-align:center">{{$student->S30_E3}}</td>
+                            <td style="text-align:center">{{$student->S31_E3}}</td>
+                            <td style="text-align:center">{{$student->S32_E3}}</td>
+                            <td style="text-align:center">{{$student->S33_E3}}</td>
+                            <td style="text-align:center">{{$student->S34_E4}}</td>
+                            <td style="text-align:center">{{$student->S35_E4}}</td>
+                            <td style="text-align:center">{{$student->S36_E4}}</td>
+                            <td style="text-align:center">{{$student->S37_E4}}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+<!--end-main-container-part-->
 @endsection
+<script type="text/javascript">
+    setTimeout(function() {
+        $('#alertThis').fadeOut('slow');
+    }, 3000); // <-- time in milliseconds
+</script>

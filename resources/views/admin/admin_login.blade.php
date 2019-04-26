@@ -14,13 +14,13 @@
     <body>
         <div id="loginbox">
             @if(Session::has('flash_message_error'))
-                <div class="alert alert-error alert-block">
+                <div id="alertThis" class="alert alert-error alert-block">
                     <button type="button" class="close" data-dismiss="alert">x</button>
                     <strong>{!! session('flash_message_error')!!}</strong>
                 </div>
             @endif
             @if(Session::has('flash_message_success'))
-                <div class="alert alert-success alert-block">
+                <div id="alertThis" class="alert alert-success alert-block">
                     <button type="button" class="close" data-dismiss="alert">x</button>
                     <strong>{!! session('flash_message_success')!!}</strong>
                 </div>
@@ -65,6 +65,12 @@
         <script src="{{ asset('js/backend_js/jquery.min.js') }}"></script>
         <script src="{{ asset('js/backend_js/matrix.login.js') }}"></script>
         <script src="{{ asset('js/backend_js/bootstrap.min.js') }}"></script>
+
+        <script type="text/javascript">
+            setTimeout(function() {
+                $('#alertThis').fadeOut('slow');
+            }, 3000); // <-- time in milliseconds
+        </script>
     </body>
 
 </html>
