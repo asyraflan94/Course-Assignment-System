@@ -468,7 +468,8 @@ class SubjectController extends Controller
 
     public function generatedSubject(){
 
-        $finalyear_students = Matrix::where('total_subject_left','<',10)->get();
+       // $finalyear_students = Matrix::where('total_subject_left','<',10)->get();
+        $finalyear_students = Matrix::orderBy('total_subject_left','asc')->get();
         $subjects = TemporarySubject::orderBy('subject_type','asc')->get();
 
         return view('admin.generated subject')->with(compact('subjects','finalyear_students'));
