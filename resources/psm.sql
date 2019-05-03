@@ -537,7 +537,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `users_email_unique` (`username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table psm.users: ~0 rows (approximately)
+-- Dumping data for table psm.users: ~1 rows (approximately)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT IGNORE INTO `users` (`id`, `name`, `username`, `email_verified_at`, `password`, `admin`, `remember_token`, `created_at`, `updated_at`) VALUES
 	(1, 'Asyraf', 'B16CS0006', '2019-01-31 02:36:48', '$2y$10$u84Uyn1CGUaKBRpa8wG2yuhzBk60NfClYr9dVoEG.CjCkb6w0mVYm', 1, 'ouiLxjmLyDDVZIEwjcoPpb0212UjuaiJ7IC4ijlWQDCPr0rfOG1nSG3jAcnV', '2019-01-30 13:14:16', '2019-02-02 16:01:45');
