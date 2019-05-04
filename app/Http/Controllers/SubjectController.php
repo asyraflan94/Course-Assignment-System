@@ -472,7 +472,54 @@ class SubjectController extends Controller
         $finalyear_students = Matrix::orderBy('total_subject_left','asc')->get();
         $subjects = TemporarySubject::orderBy('subject_type','asc')->get();
 
-        return view('admin.generated subject')->with(compact('subjects','finalyear_students'));
+        $compulsory = TemporarySubject::where('subject_type','compulsory')->count('subject_name');
+        $eachCompulsory = round($compulsory/3);
+
+        $elective = TemporarySubject::where('subject_type','elective 1')->orWhere('subject_type','elective 2')
+                                        ->orWhere('subject_type','elective 3')->orWhere('subject_type','elective 4')->count('subject_name');
+        $eachElective = round($elective/3);
+
+        $compulsory1 =  TemporarySubject::inRandomOrder()
+        ->where('subject_type','compulsory')
+        ->take($eachCompulsory)
+        ->get();
+
+        $elective1 =  TemporarySubject::inRandomOrder()
+        ->where('subject_type','elective 1')->orWhere('subject_type','elective 2')
+        ->orWhere('subject_type','elective 3')->orWhere('subject_type','elective 4')
+        ->take($eachElective)
+        ->get();
+
+        $compulsory2 = TemporarySubject::inRandomOrder()
+        ->where('subject_type','compulsory')
+        ->whereNotIn('id', $compulsory1->pluck('id'))
+        ->take($eachCompulsory)
+        ->get();
+
+        $elective2 =  TemporarySubject::inRandomOrder()
+        ->where('subject_type','elective 1')->orWhere('subject_type','elective 2')
+        ->orWhere('subject_type','elective 3')->orWhere('subject_type','elective 4')
+        ->whereNotIn('id', $elective1->pluck('id'))
+        ->take($eachElective)
+        ->get();
+
+        $compulsory3 = TemporarySubject::inRandomOrder()
+        ->where('subject_type','compulsory')
+        ->whereNotIn('id', $compulsory1->pluck('id'))
+        ->whereNotIn('id', $compulsory2->pluck('id'))
+        ->take($eachCompulsory)
+        ->get();
+
+        $elective3 =  TemporarySubject::inRandomOrder()
+        ->where('subject_type','elective 1')->orWhere('subject_type','elective 2')
+        ->orWhere('subject_type','elective 3')->orWhere('subject_type','elective 4')
+        ->whereNotIn('id', $elective1->pluck('id'))
+        ->whereNotIn('id', $elective2->pluck('id'))
+        ->take($eachElective)
+        ->get();
+
+
+        return view('admin.generated subject')->with(compact('subjects','finalyear_students','compulsory1','elective1','compulsory2','elective2','compulsory3','elective3'));
     }
 
     public function AnalisadanRekabentukSistem(){

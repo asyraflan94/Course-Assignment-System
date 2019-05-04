@@ -31,7 +31,7 @@
             </form>
         </div>
         <div class="row-fluid" align="center">
-            <a class="btn btn-danger" role="button" style="margin-top:1%" href="{{url('/admin/generate-subject')}}"><i class="icon-retweet"></i> Generate Offering List</a>
+            <a class="btn btn-danger" role="button" style="margin-top:1%;width:165px" href="{{url('/admin/generate-subject')}}"><i class="icon-retweet"></i> Generate Timetable</a>
         </div>
     </div>
     <hr>

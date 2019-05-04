@@ -923,7 +923,6 @@ class TemporaryController extends Controller
             }
         }
 
-        //return redirect('admin/generated-subject')->with(compact('S34_E4', 'S35_E4', 'S36_E4', 'S37_E4'));
         return redirect('admin/generated-subject');
     }
 }
