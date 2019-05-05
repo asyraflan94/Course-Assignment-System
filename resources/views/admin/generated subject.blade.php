@@ -15,7 +15,7 @@
                     <h5>Subjects Offering List</h5>
                 </div>
                 <div class="widget-content nopadding">
-                    <table class="table table-bordered data-table">
+                    <table class="table table-bordered ">
                         <thead>
                             <tr>
                                 <th>No.</th>
