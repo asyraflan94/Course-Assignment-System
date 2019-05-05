@@ -30,15 +30,13 @@ Route::group(['middleware' => ['auth']], function(){
     //excel
     Route::post('import', 'ExcelController@import')->name('import');
 
-    //ScsjController
-    Route::get('/admin/scsj','ScsjController@showStudent');
-
     //SubjectController
     Route::get('/test', 'TemporaryController@generateSubject');
     Route::get('/admin/list-of-subject','SubjectController@showSubjectList');
     Route::get('/admin/show-matrix','SubjectController@showMatrix');
     Route::get('/admin/final-year-list','SubjectController@showFinalYear');
     Route::get('/admin/generated-subject','SubjectController@generatedSubject');
+    Route::get('generate-pdf','SubjectController@generatePDF');
 
     //TemporaryController
     Route::get('/admin/generate-subject','TemporaryController@generateSubject');

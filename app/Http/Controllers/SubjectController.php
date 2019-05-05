@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Matrix;
-use App\Subject;
 use App\TemporarySubject;
-use App\FinalyearSubject;
+use PDF;
 use Illuminate\Support\Facades\DB;
 
 class SubjectController extends Controller
@@ -520,6 +519,16 @@ class SubjectController extends Controller
 
 
         return view('admin.generated subject')->with(compact('subjects','finalyear_students','compulsory1','elective1','compulsory2','elective2','compulsory3','elective3'));
+    }
+
+    public function generatePDF()
+    {
+
+        //$pdf = PDF::loadView('admin.generated subject');
+        $pdf = PDF::loadView('test');
+        return $pdf->download('timetable.pdf');
+
+        //return redirect('admin.generated subject');
     }
 
     public function AnalisadanRekabentukSistem(){
