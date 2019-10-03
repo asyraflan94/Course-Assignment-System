@@ -7,6 +7,11 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+## About this project
+University timetabling system is a part of a timetabling problem that aims to produce course timetable that meet student needs such as the maximum number of subjects that can be offered, the maximum number of elective subjects that can be offered and the number of subject students can take. In every semester, the timetabling process in School of Computing part-time student is done manually where there are likely to be a small number of students who will have problems because the subject to be taken is not in the subjects offering list. Additionally, the number of subjects offered is also not optimal and this will result in a loss on UTMSPACE because each subject is offered at a cost. Therefore, in order to solve this problem, the algorithm-based approach is used to overcome the problems mentioned and speed up the process to generate timetable. Algorithm engines have been developed using PHP language programming. This approach has been successfully tested and implemented using real-time scheduling data at School of Computing part-time student for Software Engineering course. The results show that algorithm has successfully solved the problem of producing a timetable without affecting students who want to enroll the subject offered.
+
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
